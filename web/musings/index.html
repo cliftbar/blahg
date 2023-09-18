@@ -1,4 +1,4 @@
-{{ $section := "blog" }}
+{{ $section := "musings" }}
 {{ $pathParts := splitList "/" .OriginalReq.URL.Path }}
 {{ $markdownFilename := default "/templates/index.md" (slice $pathParts 2 | join "/") }}
 
