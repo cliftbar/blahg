@@ -1,2 +1,4 @@
 *.json
 *.env
+.stignore
+.DS_Store
