@@ -1,0 +1,42 @@
+{{ $section := "odin" }}
+{{ $pathParts := splitList "/" .OriginalReq.URL.Path }}
+{{ $markdownFilename := default "/templates/index.md" (slice $pathParts 2 | join "/") }}
+
+{{ $markdownFilePath := "" }}
+{{ $is_index := (contains "index.md" $markdownFilename) }}
+{{ if not $is_index }}
+    {{ $markdownFileStem := trimSuffix ".html" $markdownFilename }}
+    {{ $markdownFileStem = trimSuffix ".md" $markdownFileStem }}
+    {{ $markdownFilePath = printf "/%s/markdown/%s.md" $section $markdownFileStem }}
+    {{ $markdownFile := (include $markdownFilePath | splitFrontMatter) }}
+{{ else if $is_index }}
+    {{ $markdownFilePath = $markdownFilename }}
+{{ end }}
+
+{{ $markdownFile := (include $markdownFilePath $section | splitFrontMatter) }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/dracula.css">
+    {{range $key, $value :=  $markdownFile.Meta}}
+    <meta name= "{{$key}}" content="{{$value}}">
+    {{end}}
+    <title>{{ $markdownFile.Meta.Title }}</title>
+</head>
+
+<body>
+{{ include "/includes/nav.html" }}
+{{ if $is_index }}
+{{ (include "./odin//markdown/odin-index.md") | markdown }}
+<br />
+{{ end }}
+
+{{ if not $is_index }}
+<h1>{{ $markdownFile.Meta.Title }}</h1>
+{{ end }}
+{{ markdown $markdownFile.Body }}
+</body>
+</html>

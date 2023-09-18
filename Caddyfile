@@ -1,0 +1,10 @@
+http://localhost:7992
+
+file_server
+templates
+
+try_files {path}.html {path}
+
+rewrite /reference/* /reference/index.html
+rewrite /blog/* /blog/index.html
+rewrite /odin/* /odin/index.html

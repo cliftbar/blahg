@@ -1,0 +1,32 @@
+/*Basic styling*/
+body {
+    color: #f8f8f2;
+    /*background-color: #282a36;*/
+    background-color: black;
+}
+
+/*Basic Code Block*/
+:not(pre.chroma)>code {
+    /*color: #f8f8f2;*/
+    color: orange;
+    background-color: #282a36;
+}
+
+/*Dark Mode Overrides*/
+a:visited { color: #bb48e1; }
+a:link { color: lightskyblue; }
+
+/*Navbar*/
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+    .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
