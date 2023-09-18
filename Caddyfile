@@ -2,7 +2,7 @@ http://localhost:7992
 
 file_server
 templates
-
+root * web
 try_files {path}.html {path}
 
 rewrite /reference/* /reference/index.html
