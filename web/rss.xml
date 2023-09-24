@@ -1,19 +1,25 @@
-{{- $section := "musings" -}}
-{{- $sectionTitle := $section | title -}}
 {{- $siteConf := include "site.json" | fromJson -}}
 {{- $host := $siteConf.host -}}
-{{- $pages := listFiles (printf "%s/markdown" $section) | sortAlpha | reverse -}}
-{{ $parsedPages := list }}
-{{- range $pages -}}
-    {{- $parsed := (include (printf "/%s/markdown/%s" $section .) | splitFrontMatter) -}}
-        {{- if not (default false $parsed.Meta.draft) -}}
-        {{- $_ := set $parsed.Meta "filename" . -}}
-        {{- $parsedPages = append $parsedPages $parsed -}}
-    {{- end -}}
-{{- end -}}
 
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    {{ range (get $siteConf "rss-sections") }}
+    {{- $section := . -}}
+    {{- $sectionTitle := $section | title -}}
+
+    {{- $pages := listFiles (printf "%s/markdown" $section) | sortAlpha | reverse -}}
+    {{ $parsedPages := list }}
+    {{- range $pages -}}
+        {{- $is_index := (contains "index.md" .) -}}
+        {{ if not $is_index }}
+            {{- $parsed := (include (printf "/%s/markdown/%s" $section .) | splitFrontMatter) -}}
+            {{- if not (default false $parsed.Meta.draft) -}}
+                {{- $_ := set $parsed.Meta "filename" . -}}
+                {{- $parsedPages = append $parsedPages $parsed -}}
+            {{- end -}}
+        {{ end }}
+    {{- end -}}
+
     <channel>
         <title>{{- printf "%s on %s" $sectionTitle $siteConf.title -}}</title>
         <link>{{- printf "%s/%s/rss.xml" $host $section -}}</link>
@@ -34,4 +40,5 @@
         </item>
         {{- end }}
     </channel>
+    {{ end }}
 </rss>
