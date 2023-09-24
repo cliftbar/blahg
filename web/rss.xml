@@ -23,7 +23,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>{{-  $siteConf.title -}}</title>
+        <title>{{-  $siteConf.title | toJson -}}</title>
         <link>{{- printf "%s/rss.xml" $host -}}</link>
         <description>{{- printf "Recent content for %s" $siteConf.title -}}</description>
         <docs>https://cyber.harvard.edu/rss/rss.html</docs>
@@ -36,12 +36,12 @@
         {{- range $parsedPages -}}
         {{- $link := printf "%s/%s/markdown/%s.html" $host .Meta.section ((mustRegexSplit "_" .Meta.filename 2 | last) | trimSuffix ".md") }}
         <item>
-            <title>{{ .Meta.title }}</title>
+            <title>{{ .Meta.title | replace "&" "&amp;" | replace "<" "&lt;" | replace ">" "&gt;" | replace "'" "&apos;" | replace "\"" "&quot;" }}</title>
             <link>{{ $link }}</link>
             <pubDate>{{ .Meta.createdAt.Format "02 Mar 2006 15:04:05 -0700" }}</pubDate>
             {{ with .Meta.author -}}<author>{{- . -}}</author>{{- end -}}
             <guid>{{ $link }}</guid>
-            {{ with .Meta.description -}}<description>{{- . -}}</description>{{- end }}
+            {{ with .Meta.description -}}<description>{{- . | replace "&" "&amp;" | replace "<" "&lt;" | replace ">" "&gt;" | replace "'" "&apos;" | replace "\"" "&quot;" }}</description>{{- end }}
             <category>{{- .Meta.section -}}</category>
         </item>
         {{- end }}
