@@ -33,7 +33,7 @@
 
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>{{-  $siteConf.title -}}</title>
+    <title>{{- $siteConf.title -}}</title>
     <id>{{- printf "%s/atom.xml" $host -}}</id>
     <updated>{{- ($parsedPages | first).Meta.createdAt.Format "2006-01-02T15:04:05Z07:00" -}}</updated>
     {{ with $siteConf.author -}}<author><name>{{- . -}}</name></author>{{- end }}
@@ -43,15 +43,15 @@
     {{- $link := printf "%s/%s/%s.html" $host .Meta.section (.Meta.filestem | trimSuffix ".md") }}
     <entry>
         <id>{{ $link }}</id>
-        <title>{{ .Meta.title | replace "&" "&amp;" | replace "<" "&lt;" | replace ">" "&gt;" | replace "'" "&apos;" | replace "\"" "&quot;" }}</title>
+        <title>{{ html .Meta.title }}</title>
         <updated>{{ .Meta.lastUpdated.Format "2006-01-02T15:04:05Z07:00" }}</updated>
         
         {{ with .Meta.author -}}<author><name>{{- . -}}</name></author>{{- end -}}
         <content type="html">
-            {{ (markdown .Body) | replace "&" "&amp;" | replace "<" "&lt;" | replace ">" "&gt;" | replace "'" "&apos;" | replace "\"" "&quot;" }}
+            {{ html (markdown .Body) }}
         </content>
         <link rel="alternate" type="text/html" href="{{ $link }}" />
-        {{ with .Meta.description -}}<summary>{{- . | replace "&" "&amp;" | replace "<" "&lt;" | replace ">" "&gt;" | replace "'" "&apos;" | replace "\"" "&quot;" }}</summary>{{- end }}
+        {{ with .Meta.description -}}<summary>{{- html . }}</summary>{{- end }}
         
         <category term="{{- .Meta.section -}}" />
         <published>{{ .Meta.createdAt.Format "2006-01-02T15:04:05Z07:00" }}</published>
