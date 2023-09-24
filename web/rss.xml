@@ -1,23 +1,33 @@
 {{- $siteConf := include "site.json" | fromJson -}}
 {{- $host := $siteConf.host -}}
 
-{{- $parsedPages := list -}}
-    {{ range (get $siteConf "rss-sections") }}
+
+{{- $p := dict -}}
+{{- range (get $siteConf "rss-sections") -}}
     {{- $section := . -}}
     {{- $sectionTitle := $section | title -}}
 
-    {{- $pages := listFiles (printf "%s/markdown" $section) | sortAlpha | reverse -}}
-        {{- range $pages -}}
-            {{- $is_index := (contains "index.md" .) -}}
-            {{ if not $is_index }}
-                {{- $parsed := (include (printf "/%s/markdown/%s" $section .) | splitFrontMatter) -}}
-                {{- if not (default false $parsed.Meta.draft) -}}
-                    {{- $_ := set $parsed.Meta "filename" . -}}
-                    {{- $_ := set $parsed.Meta "section" $section -}}
-                    {{- $parsedPages = append $parsedPages $parsed -}}
-                {{- end -}}
-            {{- end -}}
+    {{- $fis := listFiles (printf "%s/markdown" $section) -}}
+    {{- range $fis -}}
+        {{- $_ := set $p . (printf "/%s/markdown/%s" $section .) -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $pKeys := keys $p | sortAlpha | reverse -}}
+
+{{- $parsedPages := list -}}
+{{- range $pKeys -}}
+    {{- $filename := get $p . -}}
+    {{- $is_index := (contains "index.md" .) -}}
+    {{- if not $is_index -}}
+        {{- $section := (mustRegexSplit "/" $filename 3 | rest | first) -}}
+        {{- $parsed := include (get $p .) | splitFrontMatter -}}
+        {{- if not (default false $parsed.Meta.draft) -}}
+            {{- $_ := set $parsed.Meta "filename" $filename -}}
+            {{- $_ := set $parsed.Meta "section" $section -}}
+            {{- $parsedPages = append $parsedPages $parsed -}}
         {{- end -}}
+    {{- end -}}
 {{- end -}}
 
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
