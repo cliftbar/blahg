@@ -1,0 +1,60 @@
+{{- $siteConf := include "site.json" | fromJson -}}
+{{- $host := $siteConf.host -}}
+
+
+{{- $p := dict -}}
+{{- range (get $siteConf "rss-sections") -}}
+    {{- $section := . -}}
+    {{- $sectionTitle := $section | title -}}
+    
+    {{- $fis := listFiles (printf "%s/markdown" $section) -}}
+    {{- range $fis -}}
+        {{- $_ := set $p . (printf "/%s/markdown/%s" $section .) -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $pKeys := keys $p | sortAlpha | reverse -}}
+
+{{- $parsedPages := list -}}
+{{- range $pKeys -}}
+    {{- $filename := get $p . -}}
+    {{- $is_index := (contains "index.md" .) -}}
+    {{- if not $is_index -}}
+        {{- $section := (mustRegexSplit "/" $filename 3 | rest | first) -}}
+        {{- $parsed := include (get $p .) | splitFrontMatter -}}
+        {{- if not (default false $parsed.Meta.draft) -}}
+            {{- $_ := set $parsed.Meta "filename" $filename -}}
+            {{- $_ := set $parsed.Meta "section" $section -}}
+            {{- $_ := set $parsed.Meta "filestem" (base $filename) -}}
+            {{- $parsedPages = append $parsedPages $parsed -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{-  $siteConf.title -}}</title>
+    <id>{{- printf "%s/atom.xml" $host -}}</id>
+    <updated>{{- ($parsedPages | first).Meta.createdAt.Format "2006-01-02T15:04:05Z07:00" -}}</updated>
+    {{ with $siteConf.author -}}<author><name>{{- . -}}</name></author>{{- end }}
+    <link href="{{ printf "%s/atom.xml" $host }}" rel="self" />
+    <subtitle>{{- printf "Recent content for %s" $siteConf.title -}}</subtitle>
+    {{- range $parsedPages -}}
+    {{- $link := printf "%s/%s/%s.html" $host .Meta.section (.Meta.filestem | trimSuffix ".md") }}
+    <entry>
+        <id>{{ $link }}</id>
+        <title>{{ .Meta.title | replace "&" "&amp;" | replace "<" "&lt;" | replace ">" "&gt;" | replace "'" "&apos;" | replace "\"" "&quot;" }}</title>
+        <updated>{{ .Meta.lastUpdated.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+        
+        {{ with .Meta.author -}}<author><name>{{- . -}}</name></author>{{- end -}}
+        <content type="html">
+            {{ (markdown .Body) | replace "&" "&amp;" | replace "<" "&lt;" | replace ">" "&gt;" | replace "'" "&apos;" | replace "\"" "&quot;" }}
+        </content>
+        <link rel="alternate" type="text/html" href="{{ $link }}" />
+        {{ with .Meta.description -}}<summary>{{- . | replace "&" "&amp;" | replace "<" "&lt;" | replace ">" "&gt;" | replace "'" "&apos;" | replace "\"" "&quot;" }}</summary>{{- end }}
+        
+        <category term="{{- .Meta.section -}}" />
+        <published>{{ .Meta.createdAt.Format "2006-01-02T15:04:05Z07:00" }}</published>
+    </entry>
+    {{- end }}
+</feed>
