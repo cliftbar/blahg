@@ -1,7 +1,9 @@
 http://localhost:7992
 
 file_server
-templates
+templates {
+    mime text/html text/plain text/xml
+}
 root * web
 try_files {path}.html {path}
 
