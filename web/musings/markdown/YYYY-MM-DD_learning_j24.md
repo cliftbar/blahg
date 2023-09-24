@@ -1,5 +1,5 @@
 ---
-Title: Learning the J24
+title: Learning the J24
 createdAt:
 lastUpdated:
 draft: true

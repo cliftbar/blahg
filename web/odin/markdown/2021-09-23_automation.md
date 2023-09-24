@@ -1,6 +1,7 @@
 ---
-Title: "Automation!"
-date: 2021-09-23T22:38:17-07:00
+title: "Automation!"
+createdAt: 2021-09-23T22:38:17-07:00
+lastUpdated: 2021-09-23T22:38:17-07:00
 draft: false
 ---
 

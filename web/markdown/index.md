@@ -1,5 +1,5 @@
 ---
-Title: Cliftbar
+title: Cliftbar
 ---
 # Cliftbar Landing Page
 It's my site.  Very much still a work in progress.

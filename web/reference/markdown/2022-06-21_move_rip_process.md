@@ -1,5 +1,5 @@
 ---
-Title: Movie Rip Process
+title: Movie Rip Process
 createdAt: 2022-06-21
 lastUpdated: 2023-09-17
 ---

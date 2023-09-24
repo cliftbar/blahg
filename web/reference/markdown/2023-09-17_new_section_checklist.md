@@ -1,5 +1,5 @@
 ---
-Title: New Section Checklist
+title: New Section Checklist
 createdAt: 2023-09-17
 lastUpdated: 2023-09-17
 ---
@@ -9,7 +9,7 @@ lastUpdated: 2023-09-17
         ```
 2. Copy `index.html` into `/<new-section` and update section
     ```
-    {{ $section := "<new-section>" }}
+    {{ "{{ $section := \"<new-section>\" }}" }}
     ```
 3. Add rewrite to `Caddyfile`
     ```

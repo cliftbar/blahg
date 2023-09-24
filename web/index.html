@@ -1,9 +1,9 @@
-{{ $pathParts := splitList "/" .OriginalReq.URL.Path }}
-{{ $markdownFilename := default "index" (slice $pathParts 2 | join "/") }}
-{{ $markdownFileStem := trimSuffix ".html" $markdownFilename }}
-{{ $markdownFileStem = trimSuffix ".md" $markdownFileStem }}
-{{ $markdownFilePath := printf "markdown/%s.md" $markdownFileStem }}
-{{ $markdownFile := (include $markdownFilePath | splitFrontMatter) }}
+{{- $pathParts := splitList "/" .OriginalReq.URL.Path -}}
+{{- $markdownFilename := default "index" (slice $pathParts 2 | join "/") -}}
+{{- $markdownFileStem := trimSuffix ".html" $markdownFilename -}}
+{{- $markdownFileStem = trimSuffix ".md" $markdownFileStem -}}
+{{- $markdownFilePath := printf "markdown/%s.md" $markdownFileStem -}}
+{{- $markdownFile := (include $markdownFilePath | splitFrontMatter) -}}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +11,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/basic.css">
     <link rel="stylesheet" href="/css/dracula.css">
-    {{range $key, $value :=  $markdownFile.Meta}}
+    {{ range $key, $value :=  $markdownFile.Meta -}}
     <meta name= "{{$key}}" content="{{$value}}">
-    {{end}}
-    <title>{{ $markdownFile.Meta.Title }}</title>
+    {{- end }}
+    <title>{{ $markdownFile.Meta.title }}</title>
 </head>
-
 <body>
 {{ include "/includes/nav.html" }}
 {{ markdown $markdownFile.Body}}

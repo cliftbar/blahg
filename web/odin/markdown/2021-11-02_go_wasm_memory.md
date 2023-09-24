@@ -1,9 +1,8 @@
 ---
-Title: "Go/Wasm <-> JS Memory"
-date: 2021-11-02T20:56:45-07:00
+title: "Go/Wasm <-> JS Memory"
+createdAt: 2021-11-02T20:56:45-07:00
+lastUpdated: 2021-11-02T20:56:45-07:00
 draft: false
-tags:
-    - "30 Minute Post"
 ---
 
 This post will be about how I accessed the Go/Wasm memory buffer from the Javascript side.  I wanted to get this one out, because it took me a very long time to work through it, and I had to piece together a ton of random internet resources.  All the code is pulled from the site, but I've simplified it the best I can.

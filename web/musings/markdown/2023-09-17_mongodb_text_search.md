@@ -1,5 +1,5 @@
 ---
-Title: MongoDB Text Search
+title: MongoDB Text Search
 createdAt: 2022-06-15
 lastUpdated: 2023-09-17
 ---

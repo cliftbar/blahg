@@ -1,5 +1,5 @@
 ---
-Title: SQL Timeseries Queries
+title: SQL Timeseries Queries
 createdAt: 2022-07-23
 lastUpdated: 2023-09-17
 ---

@@ -1,14 +1,13 @@
-{{ $section := (first .Args) }}
+{{- $section := (first .Args) -}}
 ---
-Title: {{ $section | title }} Index
+title: {{ $section | title }} Index
 ---
 
-{{ $section := (first .Args) }}
 {{ range (listFiles (printf "%s/markdown" $section) | sortAlpha | reverse) }}
 {{ if not (contains "index" .) }}
 {{ $markdownFile := (include (printf "/%s/markdown/%s" $section .) | splitFrontMatter) }}
 {{ if not (default false $markdownFile.Meta.draft) }}
-- [{{ $markdownFile.Meta.Title }}]({{ . }})
+- [{{ $markdownFile.Meta.title }}]({{ . | trimSuffix ".md" }}.html)
 {{ end }}
 {{ end }}
 {{ end }}

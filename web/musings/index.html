@@ -1,19 +1,19 @@
-{{ $section := "musings" }}
-{{ $pathParts := splitList "/" .OriginalReq.URL.Path }}
-{{ $markdownFilename := default "/templates/index.md" (slice $pathParts 2 | join "/") }}
+{{- $section := "musings" -}}
+{{- $pathParts := splitList "/" .OriginalReq.URL.Path -}}
+{{- $markdownFilename := default "/templates/index.md" (slice $pathParts 2 | join "/") -}}
 
-{{ $markdownFilePath := "" }}
-{{ $is_index := (contains "index.md" $markdownFilename) }}
-{{ if not $is_index }}
-    {{ $markdownFileStem := trimSuffix ".html" $markdownFilename }}
-    {{ $markdownFileStem = trimSuffix ".md" $markdownFileStem }}
-    {{ $markdownFilePath = printf "/%s/markdown/%s.md" $section $markdownFileStem }}
-    {{ $markdownFile := (include $markdownFilePath | splitFrontMatter) }}
-{{ else if $is_index }}
-    {{ $markdownFilePath = $markdownFilename }}
-{{ end }}
+{{- $markdownFilePath := "" }}
+{{- $is_index := (contains "index.md" $markdownFilename) -}}
+{{- if not $is_index -}}
+    {{- $markdownFileStem := trimSuffix ".html" $markdownFilename -}}
+    {{- $markdownFileStem = trimSuffix ".md" $markdownFileStem -}}
+    {{- $markdownFilePath = printf "/%s/markdown/%s.md" $section $markdownFileStem -}}
+    {{- $markdownFile := (include $markdownFilePath | splitFrontMatter) -}}
+{{- else if $is_index -}}
+    {{- $markdownFilePath = $markdownFilename -}}
+{{- end }}
 
-{{ $markdownFile := (include $markdownFilePath $section | splitFrontMatter) }}
+{{- $markdownFile := (include $markdownFilePath $section | splitFrontMatter) -}}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +21,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/basic.css">
     <link rel="stylesheet" href="/css/dracula.css">
-    {{range $key, $value :=  $markdownFile.Meta}}
+    {{ range $key, $value :=  $markdownFile.Meta -}}
     <meta name= "{{$key}}" content="{{$value}}">
-    {{end}}
-    <title>{{ $markdownFile.Meta.Title }}</title>
+    {{- end }}
+    <title>{{ $markdownFile.Meta.title }}</title>
 </head>
-
 <body>
 {{ include "/includes/nav.html" }}
 {{ if not $is_index }}
-<h1>{{ $markdownFile.Meta.Title }}</h1>
+<h1>{{ $markdownFile.Meta.title }}</h1>
 {{ end }}
 {{ markdown $markdownFile.Body}}
 </body>

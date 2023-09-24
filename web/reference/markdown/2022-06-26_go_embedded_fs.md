@@ -1,5 +1,5 @@
 ---
-Title: Go Embedded FS
+title: Go Embedded FS
 createdAt: 2022-06-26
 lastUpdated: 2023-09-17
 ---

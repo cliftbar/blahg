@@ -1,5 +1,5 @@
 ---
-Title: Title
+title: Title
 createdAt:
 lastUpdated:
 draft: true

@@ -1,5 +1,5 @@
 ---
-Title: Useful Commands
+title: Useful Commands
 section: reference
 createdAt: 2023-08-15
 lastUpdated: 2023-08-15
