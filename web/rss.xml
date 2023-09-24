@@ -25,6 +25,7 @@
         {{- if not (default false $parsed.Meta.draft) -}}
             {{- $_ := set $parsed.Meta "filename" $filename -}}
             {{- $_ := set $parsed.Meta "section" $section -}}
+            {{- $_ := set $parsed.Meta "filestem" (base $filename) -}}
             {{- $parsedPages = append $parsedPages $parsed -}}
         {{- end -}}
     {{- end -}}
@@ -41,10 +42,8 @@
         <pubDate>{{- ($parsedPages | first).Meta.createdAt.Format "02 Mar 2006 15:04:05 -0700" -}}</pubDate>
         <atom:link href="{{ printf "%s/rss.xml" $host }}" rel="self" type="application/rss+xml" />
 
-
-
         {{- range $parsedPages -}}
-        {{- $link := printf "%s/%s/markdown/%s.html" $host .Meta.section ((mustRegexSplit "_" .Meta.filename 2 | last) | trimSuffix ".md") }}
+        {{- $link := printf "%s/%s/%s.html" $host .Meta.section (.Meta.filestem | trimSuffix ".md") }}
         <item>
             <title>{{ .Meta.title | replace "&" "&amp;" | replace "<" "&lt;" | replace ">" "&gt;" | replace "'" "&apos;" | replace "\"" "&quot;" }}</title>
             <link>{{ $link }}</link>
