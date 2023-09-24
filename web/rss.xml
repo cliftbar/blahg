@@ -1,35 +1,40 @@
 {{- $siteConf := include "site.json" | fromJson -}}
 {{- $host := $siteConf.host -}}
 
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+{{- $parsedPages := list -}}
     {{ range (get $siteConf "rss-sections") }}
     {{- $section := . -}}
     {{- $sectionTitle := $section | title -}}
 
     {{- $pages := listFiles (printf "%s/markdown" $section) | sortAlpha | reverse -}}
-    {{ $parsedPages := list }}
-    {{- range $pages -}}
-        {{- $is_index := (contains "index.md" .) -}}
-        {{ if not $is_index }}
-            {{- $parsed := (include (printf "/%s/markdown/%s" $section .) | splitFrontMatter) -}}
-            {{- if not (default false $parsed.Meta.draft) -}}
-                {{- $_ := set $parsed.Meta "filename" . -}}
-                {{- $parsedPages = append $parsedPages $parsed -}}
+        {{- range $pages -}}
+            {{- $is_index := (contains "index.md" .) -}}
+            {{ if not $is_index }}
+                {{- $parsed := (include (printf "/%s/markdown/%s" $section .) | splitFrontMatter) -}}
+                {{- if not (default false $parsed.Meta.draft) -}}
+                    {{- $_ := set $parsed.Meta "filename" . -}}
+                    {{- $_ := set $parsed.Meta "section" $section -}}
+                    {{- $parsedPages = append $parsedPages $parsed -}}
+                {{- end -}}
             {{- end -}}
-        {{ end }}
-    {{- end -}}
+        {{- end -}}
+{{- end -}}
 
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>{{- printf "%s on %s" $sectionTitle $siteConf.title -}}</title>
-        <link>{{- printf "%s/%s/rss.xml" $host $section -}}</link>
-        <description>{{- printf "Recent content for %s on %s" $sectionTitle $siteConf.title -}}</description>
+        <title>{{-  $siteConf.title -}}</title>
+        <link>{{- printf "%s/rss.xml" $host -}}</link>
+        <description>{{- printf "Recent content for %s" $siteConf.title -}}</description>
         <docs>https://cyber.harvard.edu/rss/rss.html</docs>
         <ttl>1440</ttl>
         <pubDate>{{- ($parsedPages | first).Meta.createdAt.Format "02 Mar 2006 15:04:05 -0700" -}}</pubDate>
-        <atom:link href="{{ printf "%s/%s/rss.xml" $host $section }}" rel="self" type="application/rss+xml" />
+        <atom:link href="{{ printf "%s/rss.xml" $host }}" rel="self" type="application/rss+xml" />
+
+
+
         {{- range $parsedPages -}}
-        {{- $link := printf "%s/%s/markdown/%s.html" $host $section ((mustRegexSplit "_" .Meta.filename 2 | last) | trimSuffix ".md") }}
+        {{- $link := printf "%s/%s/markdown/%s.html" $host .Meta.section ((mustRegexSplit "_" .Meta.filename 2 | last) | trimSuffix ".md") }}
         <item>
             <title>{{ .Meta.title }}</title>
             <link>{{ $link }}</link>
@@ -37,8 +42,8 @@
             {{ with .Meta.author -}}<author>{{- . -}}</author>{{- end -}}
             <guid>{{ $link }}</guid>
             {{ with .Meta.description -}}<description>{{- . -}}</description>{{- end }}
+            <category>{{- .Meta.section -}}</category>
         </item>
         {{- end }}
     </channel>
-    {{ end }}
 </rss>
