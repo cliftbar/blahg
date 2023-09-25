@@ -11,6 +11,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/basic.css">
     <link rel="stylesheet" href="/css/dracula.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     {{ range $key, $value :=  $markdownFile.Meta -}}
     <meta name= "{{$key}}" content="{{$value}}">
     {{- end }}
