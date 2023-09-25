@@ -1,14 +1,12 @@
-{{- $section := "musings" -}}
-{{- $pathParts := splitList "/" .OriginalReq.URL.Path -}}
-{{- $markdownFilename := default "/templates/index.md" (slice $pathParts 2 | join "/") -}}
 
+{{- $pathParts := splitList "/" .OriginalReq.URL.Path -}}
+{{- $section := (index $pathParts 1) -}}
+{{- $markdownFilename := default "/templates/index.md" (slice $pathParts 2 | join "/") -}}
 {{- $markdownFilePath := "" }}
 {{- $is_index := (contains "index.md" $markdownFilename) -}}
 {{- if not $is_index -}}
-    {{- $markdownFileStem := trimSuffix ".html" $markdownFilename -}}
-    {{- $markdownFileStem = trimSuffix ".md" $markdownFileStem -}}
+    {{- $markdownFileStem := trimSuffix ".md" (trimSuffix ".html" $markdownFilename) -}}
     {{- $markdownFilePath = printf "/%s/markdown/%s.md" $section $markdownFileStem -}}
-    {{- $markdownFile := (include $markdownFilePath | splitFrontMatter) -}}
 {{- else if $is_index -}}
     {{- $markdownFilePath = $markdownFilename -}}
 {{- end }}

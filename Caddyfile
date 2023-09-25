@@ -1,4 +1,4 @@
-http://localhost:7992
+http://localhost:1337
 
 file_server
 templates {
@@ -8,5 +8,5 @@ root * web
 try_files {path}.html {path}
 
 rewrite /reference/* /reference/index.html
-rewrite /blog/* /blog/index.html
+rewrite /musings/* /musings/index.html
 rewrite /odin/* /odin/index.html
