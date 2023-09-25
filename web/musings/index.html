@@ -25,10 +25,10 @@
     <title>{{ $markdownFile.Meta.title }}</title>
 </head>
 <body>
-{{ include "/includes/nav.html" }}
-{{ if not $is_index }}
+{{- include "/includes/nav.html" -}}
+{{- if not $is_index -}}
 <h1>{{ $markdownFile.Meta.title }}</h1>
-{{ end }}
-{{ markdown $markdownFile.Body}}
+{{- end -}}
+{{- markdown $markdownFile.Body -}}
 </body>
 </html>
