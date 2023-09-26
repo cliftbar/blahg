@@ -26,8 +26,8 @@
 </head>
 <body>
 {{- include "/includes/nav.html" -}}
-{{- if $is_index -}}
-{{- (include "/odin/markdown/odin-index.md" | markdown) -}}
+{{- if and ($is_index) ( fileExists (printf "/%s/markdown/%s-index.md" $section $section)) -}}
+{{- (include (printf "/%s/markdown/%s-index.md" $section $section) | markdown) -}}
 <br />
 {{- end -}}
 {{- if not $is_index -}}

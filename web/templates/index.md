@@ -2,7 +2,7 @@
 ---
 title: {{ $section | title }} Index
 ---
-
+## Section Posts
 {{ range (listFiles (printf "%s/markdown" $section) | sortAlpha | reverse) }}
 {{ if not (contains "index" .) }}
 {{ $markdownFile := (include (printf "/%s/markdown/%s" $section .) | splitFrontMatter) }}
