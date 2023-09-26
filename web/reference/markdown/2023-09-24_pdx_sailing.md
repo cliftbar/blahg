@@ -20,4 +20,5 @@ draft: false
 
 # Portland Weather
 - [Sailflow PDX](https://www.sailflow.com/spot/589)
-- [NOAA NWS PDX](https://forecast.weather.gov/MapClick.php?lat=45.5887&lon=-122.5969&unit=0&lg=english&FcstType=graphical)
+- [NOAA NWS PDX](https://forecast.weather.gov/MapClick.php?lat=45.5887&lon=-122.5969)
+![NOAA NWS PDX](https://forecast.weather.gov/meteograms/Plotter.php?lat=45.5887&lon=-122.5969&wfo=PQR&zcode=ORZ006&gset=18&gdiff=3&unit=0&tinfo=PY8&ahour=0&pcmd=10011010111000000000000000000000000000000000000000000000000&lg=en&indu=0!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6)
