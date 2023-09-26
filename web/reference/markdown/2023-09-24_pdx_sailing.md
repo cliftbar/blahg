@@ -1,5 +1,5 @@
 ---
-title: Portland Sail Raceing Resources
+title: Portland Sail Racing Resources
 createdAt: 2023-09-24
 lastUpdated: 2023-09-24
 draft: false
@@ -17,6 +17,22 @@ draft: false
 # J/24 Resources
 - [North Sails J/24 Racing Tips for All Conditions](https://www.northsails.com/en-us/blogs/north-sails-blog/j-24-racing-tips-for-all-conditions)
 - [North Sails J24 SPEED GUIDE](https://www.northsails.com/en-us/blogs/north-sails-blog/j-24-speed-guide)
+
+## Notes as I learn the boat
+- Trimmer
+    - cross sheet with the Genoa blocks
+    - Blow the Genoa early compared to the Jib
+- Main:
+    - curl the top leach tale. Curling the second is pinching
+    - Backstay before traveler to depower
+    - boom can go past centerline if there's enough flow, but be careful with that, not sustainable 
+- Spin:
+    - play the shoulder curl aggressively
+    - let Pit take the guy early, so Trimmer can play the curl
+Helm:
+    - take shifts while the trimmer can keep up
+    - short course WL, prefer the inside and/or gybe around the windward mark for control. 
+    - Sail flat. Sail flat. Sail flat. 
 
 # Portland Weather
 - [Sailflow PDX](https://www.sailflow.com/spot/589)
