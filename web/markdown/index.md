@@ -7,6 +7,8 @@ It's my site.  Very much still a work in progress.
 ## Sections
 - [Reference](/reference)
 - [Musings](/musings)
-- [Odin's Eye](/odin)
+- [Odin Hurricane Posts](/odin)
+
+## Other Links and Projects
 - [Pixelizor](https://pixel.cliftbar.site/)
 - [Github](https://github.com/cliftbar)
