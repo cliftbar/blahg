@@ -1,5 +1,5 @@
 ---
-title: Portland Sailing  Resources
+title: Portland, OR Sailing Resources
 createdAt: 2023-09-24
 lastUpdated: 2023-09-24
 draft: false
@@ -16,23 +16,26 @@ draft: false
 ### Columbia River Flows and Tides
 - [Vancouver Operational](https://tidesandcurrents.noaa.gov/ofs/ofs_station.html?ofs=cre&stname=Columbia%20River%20at%20Vancouver&stnid=14144700&subdomain=up)
 - [NOAA Northwest River Information](https://www.nwrfc.noaa.gov/river/station/flowplot/flowplot.cgi?lid=VAPW1)
+- [NOAA Tides & Currents](https://tidesandcurrents.noaa.gov/map/index.html)
 - [NWS Hydrologic Prediction](https://water.weather.gov/ahps2/hydrograph.php?wfo=PQR&gage=VAPW1&view=1,0,1,0,0,0,1,0)
 - [USGS Water](https://waterdata.usgs.gov/monitoring-location/14144700/#parameterCode=00065&period=P7D&showMedian=true) (Below)
 
 ![USGS Water Velocity](https://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=14144700&parm_cd=72255&period=3&format=gif_stats)
 
-## [Sail PDX](https://sailpdx.org/)
+
+## Racing
+### [Island Sailing Racing](https://www.islandsailing.org/performance)
+- [Sailing Instructions](https://docs.google.com/document/d/1G3ln5nKKivImEnNDxPzSXYgR-QuzgCU2/edit)
+
+### [Sail PDX](https://sailpdx.org/)
 - [OCSA Documents](https://sailpdx.org/racing/forms-information/ocsa-racebook-chart-race-documents/)
     - [Courses and Marks](https://sailpdx.org/wp-content/uploads/2020/01/2020_Course_Chart.pdf)
 
-## [Island Sailing Racing](https://www.islandsailing.org/performance)
-- [Sailing Instructions](https://docs.google.com/document/d/1G3ln5nKKivImEnNDxPzSXYgR-QuzgCU2/edit)
-
-## J/24 Resources
+### J/24 Resources
 - [North Sails J/24 Racing Tips for All Conditions](https://www.northsails.com/en-us/blogs/north-sails-blog/j-24-racing-tips-for-all-conditions)
 - [North Sails J24 SPEED GUIDE](https://www.northsails.com/en-us/blogs/north-sails-blog/j-24-speed-guide)
 
-### Notes as I learn the boat
+#### J/24 Notes
 - Trimmer
     - cross sheet with the Genoa blocks
     - Blow the Genoa early compared to the Jib
@@ -48,5 +51,5 @@ draft: false
     - short course WL, prefer the inside and/or gybe around the windward mark for control.
     - Sail flat. Sail flat. Sail flat.
 
-## Other Sailing Resources
+### Other Sailing Resources
 - [Racing Rules of Sailing 2021-2024](https://www.sailing.org/tools/documents/WSRRS20212024FinalwithChgsandCorrecns201113-%5B26798%5D.pdf)

@@ -10,3 +10,4 @@ try_files {path}.html {path}
 rewrite /reference/* /reference/index.html
 rewrite /musings/* /musings/index.html
 rewrite /odin/* /odin/index.html
+rewrite /glances/* /glances/index.html
