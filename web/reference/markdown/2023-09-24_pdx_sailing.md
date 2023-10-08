@@ -1,5 +1,5 @@
 ---
-title: Portland Sailing-  Resources
+title: Portland Sailing  Resources
 createdAt: 2023-09-24
 lastUpdated: 2023-09-24
 draft: false
