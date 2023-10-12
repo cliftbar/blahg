@@ -8,7 +8,7 @@ It's my site.  Very much still a work in progress.
 - [Reference](/reference)
 - [Musings](/musings)
 - [Odin Hurricane Posts](/odin)
-- [One Pages Glances](/glances)
+- [Quick Glances](/glances)
 
 ## Other Links and Projects
 - [Pixelizor](https://pixel.cliftbar.site/)

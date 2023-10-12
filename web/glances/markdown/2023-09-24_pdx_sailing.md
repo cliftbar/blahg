@@ -4,7 +4,7 @@ createdAt: 2023-09-24
 lastUpdated: 2023-09-24
 draft: false
 ---
-## Portland Sailing Weather
+## Weather
 ### Columbia River Wind
 - [Hayden Island Windmap](https://www.windfinder.com/#14/45.6214/-122.6732/2023-09-26T03:00Z/spot)
 - [Sailflow PDX](https://www.sailflow.com/spot/589)
