@@ -11,7 +11,7 @@ draft: false
 - [Pearson Airfield NWS Forecast](https://forecast.weather.gov/MapClick.php?lat=45.621&lon=-122.6542&unit=0&lg=english&FcstType=graphical)
 - [PDX NWS Forecast](https://forecast.weather.gov/MapClick.php?lat=45.5887&lon=-122.5969) (Below)
 
-![NOAA NWS PDX](https://forecast.weather.gov/meteograms/Plotter.php?lat=45.5887&lon=-122.5969&wfo=PQR&zcode=ORZ006&gset=18&gdiff=3&unit=0&tinfo=PY8&ahour=0&pcmd=10011010111000000000000000000000000000000000000000000000000&lg=en&indu=0!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6)
+![NOAA NWS PDX](https://forecast.weather.gov/meteograms/Plotter.php?lat=45.5887&lon=-122.5969&wfo=PQR&zcode=ORZ006&gset=18&gdiff=3&unit=0&tinfo=PY8&ahour=0&pcmd=10011010111000000000000000000000000000000000000000000000000&lg=en&indu=0!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6 "NOAA NWS PDX")
 
 ### Columbia River Flows and Tides
 - [Vancouver Operational](https://tidesandcurrents.noaa.gov/ofs/ofs_station.html?ofs=cre&stname=Columbia%20River%20at%20Vancouver&stnid=14144700&subdomain=up)
@@ -20,7 +20,7 @@ draft: false
 - [NWS Hydrologic Prediction](https://water.weather.gov/ahps2/hydrograph.php?wfo=PQR&gage=VAPW1&view=1,0,1,0,0,0,1,0)
 - [USGS Water](https://waterdata.usgs.gov/monitoring-location/14144700/#parameterCode=00065&period=P7D&showMedian=true) (Below)
 
-![USGS Water Velocity](https://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=14144700&parm_cd=72255&period=3&format=gif_stats)
+![USGS Water Velocity](https://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=14144700&parm_cd=72255&period=3&format=gif_stats "USGS Water Velocity Obs")
 
 
 ## Racing

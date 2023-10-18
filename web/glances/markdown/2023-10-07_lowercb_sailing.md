@@ -23,6 +23,8 @@ draft: false
 ### Wiloughby Bay
 - [Degaussing Station NWS Hourly](https://marine.weather.gov/MapClick.php?lat=36.977&lon=-76.315&unit=0&lg=english&FcstType=graphical)
 
+![Naval Station Norfolk](https://marine.weather.gov/meteograms/Plotter.php?lat=36.977&lon=-76.315&wfo=AKQ&zcode=ANZ638&gset=16&gdiff=6&unit=0&tinfo=EY5&ahour=0&pcmd=11011110110000100111000000000000000000000000000000000000000&lg=en&indu=0!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6 "Naval Station Norfolk")
+
 ## Marinas
 - [Rebel Marina - Willoughby Bay](https://www.rebelmarina.com/)
 - [Norfolk Naval Sailing Center - Willoughby Bay](https://www.navylifema.com/Recreation/Marinas/Norfolk)
