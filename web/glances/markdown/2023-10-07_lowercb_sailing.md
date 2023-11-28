@@ -14,7 +14,6 @@ draft: false
 - [Chesapeake Bay Operational Forecast](https://tidesandcurrents.noaa.gov/ofs/cbofs/cbofs.html)
 - [Naval Fleet Weather Center](https://www.metoc.navy.mil/fwcn/fwcn.html)
 - [Coast Guard Div. 5 Hampton Roads](https://wow.uscgaux.info/content.php?unit=054-05)
-- [Sea Tow Hampton Roads](https://seatow.com/hampton-roads/)
 
 ### Chesapeake Bay
 - [Thimble Shoals Tides & Currents](https://tidesandcurrents.noaa.gov/ports/ports.html?id=cb0301&mode=show_all)
@@ -41,7 +40,7 @@ draft: false
 - [York River Tacht Haven - Gloucester Point](https://yorkriveryachthaven.com/)
 - [Freedom Boat Club - Hampton Roads](https://www.freedomboatclub.com/)
 
-### Waterside-ish Restaurants
+### Restaurants
 - [Deadrise - Old Point Comfort](https://thedeadriseva.com/)
 - [The Bier Garden - Olde Towne Portsmouth](https://www.biergarden.com/)
 
@@ -55,9 +54,10 @@ draft: false
 - [Southern Bay Race Week](https://www.hamptonyc.com/southern-bay-race-week)
 - [PHRF Chesapeake](http://www.phrfchesbay.org/)
 - [Hampton One Design Class](https://www.hamptononedesign.com/)
-- [The Sunfish Challenge Facebook](https://www.facebook.com/groups/1037723906990087/)
+- [CCV Racing](https://ccvracing.us/)
 
 ## Repair and Retail
+- [Sea Tow Hampton Roads](https://seatow.com/hampton-roads/)
 - [Evolution Sails](https://www.evolutionsails.com/sail-lofts/usa/hampton-virginia/)
 - [Accredited Marine Surveyors (Virginia)](https://www.marinesurvey.org/surveyors/united-states/virginia/)
 - [West Marine VA Beach](https://www.westmarine.com/stores?showMap=true&storeId=1311)
@@ -66,4 +66,4 @@ draft: false
 - [Murphey's Prop Shop](https://www.murphyspropellers.com/)
 - [Bob's Boat Trailers](https://www.bobsboattrailers.com/)
 - [Yacht Systems Services, Inc](https://www.yacht-systems.com/)
-
+- [Northwind Yacht Service](https://northwindyachtservice.com/)

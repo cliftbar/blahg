@@ -9,6 +9,7 @@ It's my site.  Very much still a work in progress.
 - [Musings](/musings)
 - [Odin Hurricane Posts](/odin)
 - [Quick Glances](/glances)
+- [Ski](/ski)
 
 ## Other Links and Projects
 - [Pixelizor](https://pixel.cliftbar.site/)
