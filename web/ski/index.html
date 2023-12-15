@@ -26,13 +26,15 @@
 </head>
 <body>
 {{- include "/includes/nav.html" -}}
+<div class="content">
 {{- if and ($is_index) ( fileExists (printf "/%s/markdown/%s-index.md" $section $section)) -}}
 {{- (include (printf "/%s/markdown/%s-index.md" $section $section) | markdown) -}}
-<br />
 {{- end -}}
 {{- if not $is_index -}}
 <h1>{{ $markdownFile.Meta.title }}</h1>
 {{- end -}}
 {{- markdown $markdownFile.Body -}}
+</div>
+{{ include "/includes/footer.html" }}
 </body>
 </html>

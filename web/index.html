@@ -20,6 +20,9 @@
 </head>
 <body>
 {{ include "/includes/nav.html" }}
+<div class="content">
 {{ markdown $markdownFile.Body}}
+</div>
+{{ include "/includes/footer.html" }}
 </body>
 </html>

@@ -1,34 +1,37 @@
 {{- $siteConf := include "site.json" | fromJson -}}
 {{- $host := $siteConf.host -}}
 
-
 {{- $p := dict -}}
 {{- range (get $siteConf "rss-sections") -}}
     {{- $section := . -}}
     {{- $sectionTitle := $section | title -}}
-
     {{- $fis := listFiles (printf "%s/markdown" $section) -}}
     {{- range $fis -}}
         {{- $_ := set $p . (printf "/%s/markdown/%s" $section .) -}}
     {{- end -}}
 {{- end -}}
 
-{{- $pKeys := keys $p | sortAlpha | reverse -}}
-
-{{- $parsedPages := list -}}
-{{- range $pKeys -}}
+{{- $parsedPagesDict := dict -}}
+{{- range keys $p -}}
     {{- $filename := get $p . -}}
     {{- $is_index := (contains "index.md" .) -}}
-    {{- if not $is_index -}}
+    {{- $is_conflict := (contains "sync-conflict" .) -}}
+    {{- if (and (not $is_index) (not $is_conflict)) -}}
         {{- $section := (mustRegexSplit "/" $filename 3 | rest | first) -}}
         {{- $parsed := include (get $p .) | splitFrontMatter -}}
         {{- if not (default false $parsed.Meta.draft) -}}
             {{- $_ := set $parsed.Meta "filename" $filename -}}
             {{- $_ := set $parsed.Meta "section" $section -}}
             {{- $_ := set $parsed.Meta "filestem" (base $filename) -}}
-            {{- $parsedPages = append $parsedPages $parsed -}}
+            {{- $_ := set $parsedPagesDict (printf "%s-%s" $parsed.Meta.lastUpdated $filename) ($parsed) -}}
         {{- end -}}
     {{- end -}}
+{{- end -}}
+
+{{- $sortedPageKeys := ($parsedPagesDict | keys | sortAlpha | reverse) -}}
+{{- $sortedPages := list -}}
+{{- range $sortedPageKeys -}}
+    {{- $sortedPages = append $sortedPages (get $parsedPagesDict . ) -}}
 {{- end -}}
 
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -39,15 +42,15 @@
         <description>{{- printf "Recent content for %s" $siteConf.title -}}</description>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>1440</ttl>
-        <pubDate>{{- ($parsedPages | first).Meta.createdAt.Format "02 Mar 2006 15:04:05 -0700" -}}</pubDate>
+        <pubDate>{{- ($sortedPages | first).Meta.lastUpdated.Format "02 Jan 2006 15:04:05 -0700" -}}</pubDate>
         <atom:link href="{{ printf "%s/rss.xml" $host }}" rel="self" type="application/rss+xml" />
 
-        {{- range $parsedPages -}}
+        {{- range $sortedPages -}}
         {{- $link := printf "%s/%s/%s.html" $host .Meta.section (.Meta.filestem | trimSuffix ".md") }}
         <item>
             <title>{{ html .Meta.title }}</title>
             <link>{{ $link }}</link>
-            <pubDate>{{ .Meta.createdAt.Format "02 Mar 2006 15:04:05 -0700" }}</pubDate>
+            <pubDate>{{ .Meta.createdAt.Format "02 Jan 2006 15:04:05 -0700" }}</pubDate>
             {{ with .Meta.author -}}<author>{{- . -}}</author>{{- end -}}
             <guid>{{ $link }}</guid>
             {{ with .Meta.description -}}<description>{{- html . }}</description>{{- end }}

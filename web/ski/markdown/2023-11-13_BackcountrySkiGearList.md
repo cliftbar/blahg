@@ -1,7 +1,7 @@
 ---
 title: Backcountry Ski Gear List
 createdAt: 2023-11-13
-lastUpdated: 2023-11-22
+lastUpdated: 2023-12-11
 draft: false
 ---
 ## Bags
@@ -25,7 +25,6 @@ draft: false
 - Boots: [Salomon MTN Explore](https://blisterreview.com/gear-reviews/2015-2016-salomon-mtn-explore-boot)
     - Bought Used
 - Poles: Adjustable trekking poles
-    - From the sale bin at Next Adventure, they're fine enough once I put better fitting baskets on (the originals fell off quickly).
     - These are similar: https://www.amazon.com/gp/product/B07CC49R4C/ref=ox_sc_saved_title_1
 - Helmet
 
@@ -36,8 +35,8 @@ draft: false
 - Radio: [Rocky Talkie](https://rockytalkie.com/products/mountain-radio)
 
 ## Emergency Supplies
-- Bivy: [SOL Escape](https://www.surviveoutdoorslonger.com/products/escape-bivvy-orange)
-    - Decent price to performance reviews.  But after seeing it in person, I'm treating this as a one-time use item.
+- Bivy: [SOL Escape](https://www.surviveoutdoorslonger.com/products/escape-bivvy-orange) OR [Sol 2 person Bivy](https://www.surviveoutdoorslonger.com/products/emergency-bivvy-xl-w-rescue-whistle)
+    - Decent price to performance reviews.  But after seeing them in person, I'm treating this as a one-time use item.
 - First Aid Kit:
     - [Adventure Medical Kits - Mountain Backpacker](https://adventuremedicalkits.com/products/mountain-series-medical-kit-backpacker)
     - [SAM Splint](https://www.sammedical.com/products/sam-splint?variant=32444250292333)
@@ -88,10 +87,11 @@ draft: false
 - Duct Tape
 - Electrical Tape
     - Not as strong as duct tape, but can bond to itself while wet
-- PTEX Wax Ski Repair Stick
+- PTEX Ski Repair Stick
 - Lighter x2
     - tape over the fresh lighter, so that they don't both get used at the same rate
 - Zip Ties
+- Rub on skin/ski wax
 
 ## Food and Water
 - Aluminum Water Canteen: https://www.amazon.com/dp/B09NRBZ83W
@@ -114,6 +114,9 @@ draft: false
     - I'm using the TG-6 as a helmet camera with an attachment, since I don't expect to do video often.
 - AIARE Blue Book/Small Notebook
 - Pencil
+
+# Pack for the day
+Not everything comes every day, I make adjustments at the car for how long I'll be out, weather conditions, etc. For the most part packing lighter, moving faster, and calling the day early is a better defense than needing emergency gear, so there is a balance. 
 
 # Sharing
 While all this does fit into the pack, a group can share some of this gear between people, like the first aid kit, stove, or tools bag.

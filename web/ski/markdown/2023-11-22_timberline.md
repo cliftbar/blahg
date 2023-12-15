@@ -4,10 +4,9 @@ createdAt: 2023-11-22
 lastUpdated: 2023-11-28
 draft: false
 ---
-
 ## 2023-11-26: Another easy practice day
 ### Summary
-Much the same as the 22nd, though less coverage after 4 days of sun warming.  There was no cloud layer this time, so the views were really good.  Mirror lake and Ski Bowl were visible from where I was, as was what I think is Mt. Jefferson off in the distance.
+Much the same as the 22nd, though less coverage after 4 days of sun warming.  There was no cloud layer this time, so the views were really good.  Trillium lake and Ski Bowl were visible from where I was, as was what I think is Mt. Jefferson off in the distance.
 
 ### Conditions
 ~35°F, clear skies, low wind.  Sun warmed snow, losing coverage.  Hopefully Hood gets more snow soon, the next forecasted is in about 4 days
@@ -16,9 +15,9 @@ Much the same as the 22nd, though less coverage after 4 days of sun warming.  Th
 No gear issues, and no real boot problems.
 
 ### Pictures
-[![Mt. Jefferson in the distance](/img/ski/MtHood/2023-11-26/hood_to_jefferson_thumbnail.jpg)](/img/ski/MtHood/2023-11-26/hood_to_jefferson.jpg)
-[![Top of Ski Bowl](/img/ski/MtHood/2023-11-26/hood_to_skibowl_thumbnail.jpg)](/img/ski/MtHood/2023-11-26/hood_to_skibowl.jpg)
-[![Uphill of Mt. Hood](/img/ski/MtHood/2023-11-26/timberline_uphill_thumbnail.jpg)](/img/ski/MtHood/2023-11-26/timberline_uphill.jpg)
+[![](/img/ski/MtHood/2023-11-26/hood_to_jefferson_thumbnail.jpg)](/img/ski/MtHood/2023-11-26/hood_to_jefferson.jpg "Mt. Jefferson in the distance")
+[![](/img/ski/MtHood/2023-11-26/hood_to_skibowl_thumbnail.jpg)](/img/ski/MtHood/2023-11-26/hood_to_skibowl.jpg "Top of Ski Bowl")
+[![](/img/ski/MtHood/2023-11-26/timberline_uphill_thumbnail.jpg)](/img/ski/MtHood/2023-11-26/timberline_uphill.jpg "Uphill of Mt. Hood")
 
 ---
 
@@ -40,7 +39,7 @@ The gear failures were minor but annoying. The first failure was about 1 minutes
 Otherwise, besides being unsurprisingly out of shape for uphill, everything worked out well. I do think I'll look into a 40L pack at some point, as opposed to my 30L one. Fully loaded there isn't much space left, and getting to things is a bit annoying.  But I was carrying more than I usual will for a day trip, so that's not a problem for now.
 
 ### Pictures
-[![Clouds covering Mt. Hood](/img/ski/MtHood/2023-11-22/cloudy_mt_hood_thumbnail.jpg)](/img/ski/MtHood/2023-11-22/cloudy_mt_hood.jpg)
-[![No coverage in Salmon River Canyon](/img/ski/MtHood/2023-11-22/salmon_river_canyon_thumbnail.jpg)](/img/ski/MtHood/2023-11-22/salmon_river_canyon.jpg)
-[![Overlooking the parking lot](/img/ski/MtHood/2023-11-22/salmon_river_parking_overlook_thumbnail.jpg)](/img/ski/MtHood/2023-11-22/salmon_river_parking_overlook.jpg)
-[![Slope in Timberline](/img/ski/MtHood/2023-11-22/timberline_slope_thumbnail.jpg)](/img/ski/MtHood/2023-11-22/timberline_slope.jpg)
+[![](/img/ski/MtHood/2023-11-22/cloudy_mt_hood_thumbnail.jpg)](/img/ski/MtHood/2023-11-22/cloudy_mt_hood.jpg "Clouds covering Mt. Hood")
+[![](/img/ski/MtHood/2023-11-22/salmon_river_canyon_thumbnail.jpg)](/img/ski/MtHood/2023-11-22/salmon_river_canyon.jpg "No coverage in Salmon River Canyon")
+[![](/img/ski/MtHood/2023-11-22/salmon_river_parking_overlook_thumbnail.jpg)](/img/ski/MtHood/2023-11-22/salmon_river_parking_overlook.jpg "Cloud layer overlooking the parking lot")
+[![](/img/ski/MtHood/2023-11-22/timberline_slope_thumbnail.jpg)](/img/ski/MtHood/2023-11-22/timberline_slope.jpg "Slope in Timberline")
