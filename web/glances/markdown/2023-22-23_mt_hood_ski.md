@@ -1,7 +1,7 @@
 ---
 title: Mt. Hood Ski Resources
 createdAt: 2023-11-22
-lastUpdated: 2023-11-22
+updatedAt: 2023-11-22
 draft: false
 ---
 ## Weather

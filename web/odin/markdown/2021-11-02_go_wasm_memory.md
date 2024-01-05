@@ -1,7 +1,7 @@
 ---
 title: "Go/Wasm <-> JS Memory"
 createdAt: 2021-11-02T20:56:45-07:00
-lastUpdated: 2021-11-02T20:56:45-07:00
+updatedAt: 2021-11-02T20:56:45-07:00
 draft: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Lower Chesapeake Bay Sailing Resources
 createdAt: 2023-09-24
-lastUpdated: 2023-09-24
+updatedAt: 2023-09-24
 draft: false
 ---
 ## Weather and Tides

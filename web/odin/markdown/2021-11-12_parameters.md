@@ -1,11 +1,11 @@
 ---
 title: "Input Parameters"
 createdAt: 2021-11-12T10:54:00-08:00
-lastUpdated: 2021-11-12T10:54:00-08:00
+updatedAt: 2021-11-12T10:54:00-08:00
 draft: False
 ---
 
-This is just a quick overview of the major parameters and measurements provided by NOAA that get pulled into the model.  There are a few different sources for these parameters, though in the end the sources all have pretty much the same data.  
+This is just a quick overview of the major parameters and measurements provided by NOAA that get pulled into the model.  There are a few different sources for these parameters, though in the end the sources all have pretty much the same data.
 
 # Time
 - **Timestamp**

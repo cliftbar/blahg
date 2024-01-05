@@ -1,7 +1,7 @@
 ---
 title: New Section Checklist
 createdAt: 2023-09-17
-lastUpdated: 2023-10-07
+updatedAt: 2023-10-07
 ---
 1. Copy directory structure from starter template
         ```sh

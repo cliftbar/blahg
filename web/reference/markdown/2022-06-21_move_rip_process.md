@@ -1,7 +1,7 @@
 ---
 title: Movie Rip Process
 createdAt: 2022-06-21
-lastUpdated: 2023-09-17
+updatedAt: 2023-09-17
 ---
 ## Hardware
 - Pioneer Electronics BDR-XS07UHD

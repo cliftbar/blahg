@@ -1,7 +1,7 @@
 ---
 title: Alpine and Glade trails at Summit
 createdAt: 2023-12-11
-lastUpdated: 2023-12-11
+updatedAt: 2023-12-11
 draft: false
 ---
 ## Overview

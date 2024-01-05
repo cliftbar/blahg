@@ -1,7 +1,7 @@
 ---
 title: SQL Timeseries Queries
 createdAt: 2022-07-23
-lastUpdated: 2023-09-17
+updatedAt: 2023-09-17
 ---
 Some queries for working with timeseries data in a standard SQL table.  For this I'll be using an integer timestamp for simplicity and SQLite as the DB.  However, in a real situation using datetime is probably better, and the SQL queries are portable across at least most of the major DBs.
 

@@ -1,7 +1,7 @@
 ---
 title: Go Embedded FS
 createdAt: 2022-06-26
-lastUpdated: 2023-09-17
+updatedAt: 2023-09-17
 ---
 
 Declare and embed files and directories, these are available everywhere  in `main.go` at least

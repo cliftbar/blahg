@@ -2,7 +2,7 @@ http://localhost:1337
 
 file_server
 templates {
-    mime text/html text/plain text/xml
+    mime text/html text/plain text/xml application/json
 }
 root * web
 try_files {path}.html {path}
@@ -11,3 +11,4 @@ rewrite /reference/* /reference/index.html
 rewrite /musings/* /musings/index.html
 rewrite /odin/* /odin/index.html
 rewrite /glances/* /glances/index.html
+rewrite /ski/* /ski/index.html

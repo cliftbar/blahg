@@ -1,7 +1,7 @@
 ---
 title: Title
 createdAt:
-lastUpdated:
+updatedAt:
 draft: true
 ---
 Opening paragraph

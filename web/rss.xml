@@ -23,7 +23,7 @@
             {{- $_ := set $parsed.Meta "filename" $filename -}}
             {{- $_ := set $parsed.Meta "section" $section -}}
             {{- $_ := set $parsed.Meta "filestem" (base $filename) -}}
-            {{- $_ := set $parsedPagesDict (printf "%s-%s" $parsed.Meta.lastUpdated $filename) ($parsed) -}}
+            {{- $_ := set $parsedPagesDict (printf "%s-%s" $parsed.Meta.updatedAt $filename) ($parsed) -}}
         {{- end -}}
     {{- end -}}
 {{- end -}}
@@ -42,7 +42,7 @@
         <description>{{- printf "Recent content for %s" $siteConf.title -}}</description>
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>1440</ttl>
-        <pubDate>{{- ($sortedPages | first).Meta.lastUpdated.Format "02 Jan 2006 15:04:05 -0700" -}}</pubDate>
+        <pubDate>{{- ($sortedPages | first).Meta.updatedAt.Format "02 Jan 2006 15:04:05 -0700" -}}</pubDate>
         <atom:link href="{{ printf "%s/rss.xml" $host }}" rel="self" type="application/rss+xml" />
 
         {{- range $sortedPages -}}
@@ -53,7 +53,7 @@
             <pubDate>{{ .Meta.createdAt.Format "02 Jan 2006 15:04:05 -0700" }}</pubDate>
             {{ with .Meta.author -}}<author>{{- . -}}</author>{{- end -}}
             <guid>{{ $link }}</guid>
-            {{ with .Meta.description -}}<description>{{- html . }}</description>{{- end }}
+            {{ with (or .Meta.description .Meta.summary) -}}<description>{{- html . }}</description>{{- end }}
             <category>{{- .Meta.section -}}</category>
         </item>
         {{- end }}

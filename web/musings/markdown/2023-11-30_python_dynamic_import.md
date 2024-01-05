@@ -1,7 +1,7 @@
 ---
 title: Python Dynamic Importing
 createdAt: 2023-11-30
-lastUpdated: 2023-11-30
+updatedAt: 2023-11-30
 draft: false
 ---
 

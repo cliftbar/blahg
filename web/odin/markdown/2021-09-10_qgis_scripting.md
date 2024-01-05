@@ -1,7 +1,7 @@
 ---
 title: "QGIS Scripting"
 createdAt: 2021-09-10T00:00:00+00:00
-lastUpdated: 2021-09-10T00:00:00+00:00
+updatedAt: 2021-09-10T00:00:00+00:00
 draft: false
 ---
 

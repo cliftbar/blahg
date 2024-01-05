@@ -1,7 +1,7 @@
 ---
 title: Pre-Trip Checklist
 createdAt: 2023-11-17
-lastUpdated: 2023-11-22
+updatedAt: 2023-11-22
 draft: false
 ---
 ## Plan

@@ -20,12 +20,12 @@ def do_dir(source_dir: Path):
         single(s, 400)
 
 def main():
-    do_single: bool = True
+    do_single: bool = False
     if do_single:
-        single_source_path: Path = Path(f"../web/img/ski/MtHood/satellite/2023-12-13-00-00_2023-12-13-23-59_Sentinel-2_L2A_True_color.png")
+        single_source_path: Path = Path(f"../web/img/ski/MtHood/satellite/2023-12-23-00-00_2023-12-23-23-59_Sentinel-2_L2A_True_color.png")
         single(single_source_path, 600)
     else:
-        source_dir: Path = Path(f"../web/img/ski/MtHood/2023-12-09")
+        source_dir: Path = Path(f"../web/img/ski/MtHood/2023-12-26")
         do_dir(source_dir)
 
 if __name__ == "__main__":

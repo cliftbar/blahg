@@ -1,7 +1,7 @@
 ---
 title: Learning the J24
 createdAt:
-lastUpdated:
+updatedAt:
 draft: true
 ---
 I've started racing J24s for the first time. Which, despite 24ft being a bit of a gap in my

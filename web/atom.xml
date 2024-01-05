@@ -24,7 +24,7 @@
             {{- $_ := set $parsed.Meta "filename" $filename -}}
             {{- $_ := set $parsed.Meta "section" $section -}}
             {{- $_ := set $parsed.Meta "filestem" (base $filename) -}}
-            {{- $_ := set $parsedPagesDict (printf "%s-%s" $parsed.Meta.lastUpdated $filename) ($parsed) -}}
+            {{- $_ := set $parsedPagesDict (printf "%s-%s" $parsed.Meta.updatedAt $filename) ($parsed) -}}
         {{- end -}}
     {{- end -}}
 {{- end -}}
@@ -39,7 +39,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{- $siteConf.title -}}</title>
     <id>{{- printf "%s/atom.xml" $host -}}</id>
-    <updated>{{- ($sortedPages | first).Meta.lastUpdated.Format "2006-01-02T15:04:05Z07:00" -}}</updated>
+    <updated>{{- ($sortedPages | first).Meta.updatedAt.Format "2006-01-02T15:04:05Z07:00" -}}</updated>
     {{ with $siteConf.author -}}<author><name>{{- . -}}</name></author>{{- end }}
     <link href="{{ printf "%s/atom.xml" $host }}" rel="self" />
     <subtitle>{{- printf "Recent content for %s" $siteConf.title -}}</subtitle>
@@ -48,7 +48,7 @@
     <entry>
         <id>{{ $link }}</id>
         <title>{{ html .Meta.title }}</title>
-        <updated>{{ .Meta.lastUpdated.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+        <updated>{{ .Meta.updatedAt.Format "2006-01-02T15:04:05Z07:00" }}</updated>
         {{ with .Meta.author -}}
         <author><name>{{- . -}}</name></author>
         {{- end -}}
@@ -56,7 +56,7 @@
             {{ html (markdown .Body) }}
         </content>
         <link rel="alternate" type="text/html" href="{{ $link }}" />
-        {{ with .Meta.description -}}<summary>{{- html . }}</summary>{{- end }}
+        {{ with (or .Meta.description .Meta.summary) -}}<summary>{{- html . }}</summary>{{- end }}
         <category term="{{- .Meta.section -}}" />
         <published>{{ .Meta.createdAt.Format "2006-01-02T15:04:05Z07:00" }}</published>
     </entry>

@@ -1,7 +1,7 @@
 ---
 title: MongoDB Text Search
 createdAt: 2022-06-15
-lastUpdated: 2023-09-17
+updatedAt: 2023-09-17
 ---
 MongoDB supports text search in a few ways of varying efficiency.  See the matrix below for a quick overview, and further discussions for details.  Java code is using [Morphia](https://morphia.dev/landing/index.html)
 

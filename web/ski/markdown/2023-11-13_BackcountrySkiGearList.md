@@ -1,7 +1,7 @@
 ---
 title: Backcountry Ski Gear List
 createdAt: 2023-11-13
-lastUpdated: 2023-12-11
+updatedAt: 2023-12-11
 draft: false
 ---
 ## Bags
