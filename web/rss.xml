@@ -48,11 +48,11 @@
         {{- range $sortedPages -}}
         {{- $link := printf "%s/%s/%s.html" $host .Meta.section (.Meta.filestem | trimSuffix ".md") }}
         <item>
+            <guid>{{ (.Meta.filestem | trimSuffix ".md") }}</guid>
             <title>{{ html .Meta.title }}</title>
             <link>{{ $link }}</link>
             <pubDate>{{ .Meta.createdAt.Format "02 Jan 2006 15:04:05 -0700" }}</pubDate>
             {{ with .Meta.author -}}<author>{{- . -}}</author>{{- end -}}
-            <guid>{{ $link }}</guid>
             {{ with (or .Meta.description .Meta.summary) -}}<description>{{- html . }}</description>{{- end }}
             <category>{{- .Meta.section -}}</category>
         </item>

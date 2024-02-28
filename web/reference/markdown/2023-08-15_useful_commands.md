@@ -165,3 +165,21 @@ caddy run --config http.caddyfile --adapter caddyfile
 ```shell
 kill -9 $(lsof -ti:3000)
 ```
+
+## Git
+### unset/reset credential helper (windows)
+```powershell
+git config --system --unset credential.helper
+git config --system credential.helper manager
+```
+
+### rewrite project author history (!danger!)
+```shell
+git rebase -r --root --exec "git commit --amend --no-edit --reset-author"
+```
+
+### Add secondary push Remote
+```shell
+git remote set-url origin --push --add <a remote>
+git remote set-url origin --push --add <another remote>
+```

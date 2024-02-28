@@ -1,18 +1,21 @@
 ---
 title: Satellite Imagery Mt. Hood
 createdAt: 2023-11-23
-updatedAt: 2023-12-14
+updatedAt: 2024-02-11
 draft: false
 ---
 [Sentinel-2 via Copernicus Data Space](https://dataspace.copernicus.eu/), 5 day return period
 
-## Next Pass: 2024-01-07
+## Next Pass: 2024-02-26
 
-## 2024-01-02
-clouds
+## 2024-02-06 - 2024-02-21
+more clouds
 
-## 2023-12-28
-clouds
+## 2024-02-01
+[![](/img/ski/MtHood/satellite/2024-02-01-00-00_2024-02-01-23-59_Sentinel-2_L1C_True_color_thumbnail.png)](/img/ski/MtHood/satellite/2024-02-01-00-00_2024-02-01-23-59_Sentinel-2_L1C_True_color.png "Mt. Hood 2023-12-23")
+
+## 2023-12-28 thru 2024-01-27
+clouds :P
 
 ## 2023-12-23
 [![](/img/ski/MtHood/satellite/2023-12-23-00-00_2023-12-23-23-59_Sentinel-2_L2A_True_color_thumbnail.png)](/img/ski/MtHood/satellite/2023-12-23-00-00_2023-12-23-23-59_Sentinel-2_L2A_True_color.png "Mt. Hood 2023-12-23")
