@@ -22,10 +22,10 @@ def do_dir(source_dir: Path):
 def main():
     do_single: bool = True
     if do_single:
-        single_source_path: Path = Path(f"../web/img/ski/MtHood/satellite/2024-02-01-00-00_2024-02-01-23-59_Sentinel-2_L1C_True_color.png")
+        single_source_path: Path = Path(f"../web/img/ski/MtHood/satellite/2024-03-07-00-00_2024-03-07-23 59_Sentinel-2_L2A_True_color.png")
         single(single_source_path, 600)
     else:
-        source_dir: Path = Path(f"../web/img/ski/MtHood/2023-12-26")
+        source_dir: Path = Path(f"../web/img/ski/MtHood/2024-02-17")
         do_dir(source_dir)
 
 if __name__ == "__main__":

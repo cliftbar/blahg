@@ -1,6 +1,6 @@
 ---
 title: Title
-createdAt:
+createdAt: YYYY-MM-DDThh:mm:ssZ
 updatedAt:
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
-title: Cliftbar
+title: Cliftbar Home
 ---
-# Cliftbar Landing Page
+# Blahg Landing Page
 It's my site.  Very much still a work in progress.
 
 ## Sections
