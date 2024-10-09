@@ -1,0 +1,45 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/dracula.css">
+    <link rel="stylesheet" href="map.css">
+    <script src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+
+    <!-- https://github.com/jimmyrocks/maplibre-gl-vector-text-protocol -->
+    <script src="https://loc8.us/maplibre-gl-vector-text-protocol/dist/maplibre-gl-vector-text-protocol.js"></script>
+
+
+</head>
+<body>
+    {{ include "/includes/nav.html" }}
+    <div id="content">
+        <div id="controls">
+            <form id="controlForm">
+                <p>Load a GeoJSON (.json) or GPX (.gpx) Track from File or URL.</p>
+                <fieldset>
+                    <label for="inputTrackLabel">Track Name</label>
+                    <input id="inputTrackLabel" type="text" placeholder="optional">
+                    <label for="inputTrackColor">Track Color</label>
+                    <input id="inputTrackColor" type="color" value="#FF0000" >
+                </fieldset>
+                <fieldset>
+                    <legend>From File</legend>
+                    <input id="inputFile" type="file">
+                    <button id="inputFileAdd" type="button" onclick=addTrack()>Load Track</button>
+                </fieldset>
+                <fieldset>
+                    <legend>From URL</legend>
+                    <input id="inputUrl" type="text">
+                    <button id="inputFileFetch" type="button" onclick=fetchTrack()>Fetch Track</button>
+                </fieldset>
+            </form>
+            <div id="track-menu">
+                <ul id="track-list"></ul>
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+    {{ include "/includes/footer.html" }}
+    <script src="map.js"></script>
+</body>

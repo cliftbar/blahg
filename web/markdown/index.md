@@ -3,6 +3,7 @@ title: Cliftbar Home
 ---
 # Blahg Landing Page
 It's my site.  Very much still a work in progress.
+[http://localhost:1337/ski/html/map.html](http://localhost:1337/ski/html/map.html)
 
 ## Sections
 - [Reference](/reference)

@@ -23,6 +23,9 @@
     <meta name= "{{$key}}" content="{{$value}}">
     {{- end }}
     <title>{{ $markdownFile.Meta.title }}</title>
+    <script src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+
 </head>
 <body>
 {{- include "/includes/nav.html" -}}
