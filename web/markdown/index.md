@@ -13,7 +13,6 @@ It's my site.  Very much still a work in progress.
   - [Track Map](/glances/markup/map.html)
 - [Ski](/ski)
 
-
 ## Other Links and Projects
 - [Pixelizor](https://pixel.cliftbar.site/)
 - [Github](https://github.com/cliftbar)
