@@ -17,6 +17,8 @@ http://localhost:1337 {
     @notResources {
         not path /img/*
         not path /css/*
+        not path /data/*
+        not path */markup/*
     }
 
     handle @notResources  {
