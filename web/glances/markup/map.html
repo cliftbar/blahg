@@ -13,25 +13,39 @@
 </head>
 <body>
     {{ include "/includes/nav.html" }}
-    <div id="content">
-        <div id="controls">
+    <div id="content" class="flex-container">
+        <div id="controls" class="flex-container">
             <form id="controlForm">
                 <p>Load a GeoJSON (.json) or GPX (.gpx) Track from File or URL.</p>
-                <fieldset>
+                <fieldset class="flex-container">
                     <label for="inputTrackLabel">Track Name</label>
                     <input id="inputTrackLabel" type="text" placeholder="optional">
                     <label for="inputTrackColor">Track Color</label>
                     <input id="inputTrackColor" type="color" value="#FF0000" >
                 </fieldset>
-                <fieldset>
+                <fieldset class="flex-container">
                     <legend>From File</legend>
                     <input id="inputFile" type="file">
                     <button id="inputFileAdd" type="button" onclick=addTrack()>Load Track</button>
                 </fieldset>
-                <fieldset>
+                <fieldset class="flex-container">
                     <legend>From URL</legend>
                     <input id="inputUrl" type="text">
                     <button id="inputFileFetch" type="button" onclick=fetchTrack()>Fetch Track</button>
+                </fieldset>
+                <fieldset class="flex-container">
+                    <legend>From List</legend>
+                    <select id="slct_selectTrack">
+                        {{ range listFiles ("/data/gpx") }}
+                            {{ $group := . }}
+                            <optgroup label="{{ . }}">
+                            {{ range listFiles (printf "/data/gpx/%s" $group) }}
+                                <option value='{{ printf "%s/%s" $group . }}'>{{ . }}</option>
+                            {{ end }}
+                            </optgroup>
+                        {{ end }}
+                    </select>
+                    <button id="selectFetch" type="button" onclick=selectTrack()>Get Track</button>
                 </fieldset>
             </form>
             <div id="track-menu">
