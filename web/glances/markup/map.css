@@ -21,5 +21,12 @@
 fieldset {
     display: flex;
     flex-direction: row;
-
 }
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 1200px) {
+  .flex-container {
+      flex-direction: column;
+      align-content: flex-start;
+/*      align-items: flex-start;*/
+    }
+  }

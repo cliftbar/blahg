@@ -7,11 +7,13 @@ draft: false
 ## Overview
 Timberline Lodge is the start point for many of the routes up Mt. Hood.  The uphill routes are well marked and even groomed up to the top of Palmer Glacier.  Parking fills up quickly, so get there early.  On the downhill, either take the resort runs back to the base, or take Salmon River Canyon (just to the East of the resort) back to the Climbers Lot.  When touring, remember to get a self-issue permit and fill out your group info at the kiosk just inside the lodge entrance.
 
-- [Timberline Tracks](https://www.gaiagps.com/map/?loc=13.5/-121.7209/45.3448&pubLink=WdHbTqEAVaU93bXCyCSvYcWi&folderId=db2a7bb6-668d-4d5a-ae83-2aef7759fe71)
-
 ## 2023-12-23: First Palmer Glacier Ascent
 ### Summary
 Perfect weather conditions made most of the day easy: get on the uphill track, keep walking to the top of Palmer lift.  On the descent, I took Salmon River Canyon down, which was still a bit rocky and icy in spots, but had some powder stashes from wind transported snow that were quite nice.  Lots of people were out, both at the resort proper and the uphill tracks.
+
+### Tracks
+- [Ascent to the Top of Palmer Lift](/glances/markup/map.html?track=https://{{.Host}}/data/gpx/timberline/palmer_ascent_2023-12-23.gpx)
+- [Descent through Salmon River Canyon](/glances/markup/map.html?track=https://{{.Host}}/data/gpx/timberline/palmer_descent_2023-12-33.gpx)
 
 ### Conditions
 Mid 20s, clear skies, and low wind after 3"-6" of snow overnight.  A few clouds came through, but didn't stick around, so the [satellite image](https://cliftbar.site/ski/2023-11-23_SatelliteImageryMtHood.html#2023-12-23) of the day is great.
@@ -22,10 +24,6 @@ As far as gear and planning, everything worked fine.  I still need to get in bet
 I think I get geo-tagging to work in the camera this time, so in theory the pictures have location data in them.  I'll need to see if there's a good way to link pictures to the track.  Although it seems I've been taking low resolution photos, so I do need to remember to fix that next time.
 
 While the clear weather and obvious uphill track made it pretty hard to get into much trouble (the parking lot was visible the entire time, as were the Timberline lifts), it's easy to see how much harder it would be without visibility.  Going much higher than where I stopped opens up plenty of places to make wrong turns on the way down, either down Steel Cliff or White River Glacier to the East, or Zig Zag Glacier to the West.  And it is possible to miss the parking lot if you're in Salmon River Canyon.
-
-### Tracks
-- [Ascent to the Top of Palmer Lift](https://www.gaiagps.com/map/?loc=13.5/-121.7209/45.3448&pubLink=IrCsmLvrytB7bbn80pObGOfz&trackId=3a90eaf3-1bda-43cb-9c82-5ba2ff817d89)
-- [Descent through Salmon River Canyon](https://www.gaiagps.com/map/?loc=13.5/-121.7209/45.3448&pubLink=gNyeqkWcpcC4Nj48peSedVok&trackId=f7f3cbcb-33ce-49e0-b450-2a3d3e9a23f4)
 
 ### Photos
 [![](/img/ski/MtHood/2023-12-23/the_start_thumbnail.jpg)](/img/ski/MtHood/2023-12-23/the_start.jpg "View from the start")
@@ -77,7 +75,7 @@ The gear failures were minor but annoying. The first failure was about 1 minutes
 Otherwise, besides being unsurprisingly out of shape for uphill, everything worked out well. I do think I'll look into a 40L pack at some point, as opposed to my 30L one. Fully loaded there isn't much space left, and getting to things is a bit annoying.  But I was carrying more than I usual will for a day trip, so that's not a problem for now.
 
 ### Tracks
-- [Uphill](https://www.gaiagps.com/map/?loc=14.7/-121.7008/45.3398&pubLink=TTSYWSvBVEm0AvbDmVbFv5AP&trackId=c9c423e9-920a-4127-91a1-6bc754b33394)
+- [Uphill](/glances/markup/map.html?track=https://{{.Host}}/data/gpx/timberline/timberline_practice_uphill.gpx)
 
 ### Pictures
 [![](/img/ski/MtHood/2023-11-22/cloudy_mt_hood_thumbnail.jpg)](/img/ski/MtHood/2023-11-22/cloudy_mt_hood.jpg "Clouds covering Mt. Hood")
