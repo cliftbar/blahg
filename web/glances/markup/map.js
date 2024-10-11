@@ -21,15 +21,13 @@ async function init() {
     });
 
     await loadSearchParams()
-//    console.log(JSON.parse(JSON.stringify(Array.from(sources))));
     await zoomToSources();
-//    console.log("done");
 }
 async function loadSearchParams() {
     const urlParams = new URLSearchParams(window.location.search);
     let ps = []
     urlParams.getAll("track").forEach((track) => {
-        ps.push(trackFromUrl(track, track));
+        ps.push(trackFromUrl(track, track, randomPastelColors()));
     });
     await Promise.all(ps);
 }
@@ -46,29 +44,58 @@ function guessInputType(ipt){
 async function fetchTrack() {
     let url = document.getElementById("inputUrl").value;
     const sourceName = document.getElementById("inputTrackLabel").value || url;
-    await trackFromUrl(url, sourceName);
+    let color = document.getElementById("inputTrackColor").value;
+    await trackFromUrl(url, sourceName, color);
+    document.getElementById("inputTrackColor").value = randomPastelColors();
 }
 
 async function selectTrack() {
     let target_fi = document.getElementById("slct_selectTrack").value;
+    if (target_fi === "") {
+        return;
+    }
     let host = window.location.protocol + "//" + window.location.host;
     let target_url = host + "/data/gpx/" + target_fi
-    await trackFromUrl(target_url, target_url)
+    let color = document.getElementById("inputTrackColor").value;
+
+    await trackFromUrl(target_url, target_url, color);
+
+    document.getElementById("inputTrackColor").value = randomPastelColors();
 }
-async function trackFromUrl(url, sourceName) {
+
+async function addTrack() {
+    const file = document.getElementById("inputFile").files[0]; // Read first selected file
+    const sourceName = document.getElementById("inputTrackLabel").value || file.name;
+    let color = document.getElementById("inputTrackColor").value;
+
+    const reader = new FileReader();
+
+    reader.onload = async function (theFile) {
+
+        const gpxContent = theFile.target.result;
+
+        const inputBlob = new Blob([gpxContent], { type: 'text/plain' });
+            // Create a data URL from the Blob
+        const blobUrl = guessInputType(file.name) + URL.createObjectURL(inputBlob);
+
+        await addSourceLayer(sourceName, blobUrl, color)
+        await zoomToSources();
+    }
+    reader.readAsText(file, 'UTF-8');
+}
+
+async function trackFromUrl(url, sourceName, color) {
     let r = await fetch(url)
     let content = await r.text()
     const inputBlob = new Blob([content], { type: 'text/plain' });
 
     const blobUrl = guessInputType(url) + URL.createObjectURL(inputBlob);
 
-    await addSourceLayer(sourceName, blobUrl)
-        zoomToSource(sourceName)
-    document.getElementById("inputTrackColor").value = randomPastelColors()
+    await addSourceLayer(sourceName, blobUrl, color)
+    await zoomToSources()
 }
 
-async function addSourceLayer(sourceName, blobUrl) {
-    let color = document.getElementById("inputTrackColor").value;
+async function addSourceLayer(sourceName, blobUrl, color) {
     let layerId = layerIdPrefix + sourceName
     await map.addSource(sourceName, {
         'type': 'geojson',
@@ -87,29 +114,6 @@ async function addSourceLayer(sourceName, blobUrl) {
     });
     sources.set(sourceName, layerId);
 }
-async function addTrack() {
-    const file = document.getElementById("inputFile").files[0]; // Read first selected file
-    const sourceName = document.getElementById("inputTrackLabel").value || file.name;
-//    console.log(file)
-
-    const reader = new FileReader();
-
-    reader.onload = async function (theFile) {
-
-        const gpxContent = theFile.target.result;
-
-        const inputBlob = new Blob([gpxContent], { type: 'text/plain' });
-            // Create a data URL from the Blob
-        const blobUrl = guessInputType(file.name) + URL.createObjectURL(inputBlob);
-        let color = document.getElementById("inputTrackColor").value;
-
-
-        await addSourceLayer(sourceName, blobUrl)
-        await zoomToSource(sourceName)
-        document.getElementById("inputTrackColor").value = randomPastelColors()
-    }
-    reader.readAsText(file, 'UTF-8');
-}
 
 async function removeTrack(evt) {
     let tgt = evt.target;
@@ -124,9 +128,19 @@ async function removeTrack(evt) {
     document.getElementById("li_" + elmId).remove();
 }
 
-async function zoomToSource(source) {
-    map.getSource(source).getData().then(d => {
-        const coordinates = d.features[0].geometry.coordinates;
+function getFlatCoords(geom) {
+    if (geom.type == "LineString") {
+        return geom.coordinates;
+    } else if (geom.type == "MultiLineString") {
+        return geom.coordinates.flat();
+    } else if (geom.type == "Point") {
+        return [geom.coordinates];
+    }
+    return geom.coordinates;
+}
+
+function getFeatureBounds(feature) {
+    const coordinates = getFlatCoords(feature.geometry);
 
     // Pass the first coordinates in the LineString to `lngLatBounds` &
     // wrap each coordinate pair in `extend` to include them in the bounds
@@ -136,35 +150,58 @@ async function zoomToSource(source) {
     let bounds = coordinates.reduce((bounds, coord) => {
         return bounds.extend(coord);
     }, new maplibregl.LngLatBounds(coordinates[0], coordinates[0]));
+
     return bounds;
-    }).then(bounds => {
-        map.fitBounds(bounds, {
-            padding: 20
-        });
-    })
 }
 
-async function zoomToSources() {
-//    var bounds = new maplibregl.LngLatBounds(0, 0);
+
+async function zoomToSourceCollection(source) {
+    let d = await map.getSource(source).getData();
+    let bounds = d.features.reduce((bounds, f) => {
+        return bounds.extend(getFeatureBounds(f));
+    }, new maplibregl.LngLatBounds(getFeatureBounds(features[0]), getFeatureBounds(features[0])));
+
+    map.fitBounds(bounds, {
+        padding: 20
+    });
+}
+
+async function zoomToSource(source) {
+    let d = await map.getSource(source).getData();
+
+    const coordinates = getFlatCoords(d.features[0].geometry);
+
+    // Pass the first coordinates in the LineString to `lngLatBounds` &
+    // wrap each coordinate pair in `extend` to include them in the bounds
+    // result. A variation of this technique could be applied to zooming
+    // to the bounds of multiple Points or Polygon geometries - it just
+    // requires wrapping all the coordinates with the extend method.
+    let bounds = coordinates.reduce((bounds, coord) => {
+        return bounds.extend(coord);
+    }, new maplibregl.LngLatBounds(coordinates[0], coordinates[0]));
+
+    map.fitBounds(bounds, {
+        padding: 20
+    });
+}
+
+async function zoomToSourcesOneFeatire() {
     var promises = []
     var coords = []
-//    await console.log(sources)
     let src_arr = [...sources.keys()];
-//    await console.log(src_arr)
+    if (src_arr.length == 0) {
+        return;
+    }
     for (let i = 0; i < src_arr.length; i++) {
         let k = src_arr[i];
-//        await console.log(k)
         let src = map.getSource(k)
-//        await console.log(src)
         promises.push(src.getData());
     }
 
     let res = await Promise.all(promises)
-//    console.log(res)
     for (let r of res) {
-        coords = coords.concat(r.features[0].geometry.coordinates)
+        coords = coords.concat(getFlatCoords(r.features[0].geometry))
     };
-//    console.log(coords)
 
     let bounds = coords.reduce((bounds, coord) => {
         return bounds.extend(coord);
@@ -174,11 +211,38 @@ async function zoomToSources() {
     });
 }
 
+async function zoomToSources() {
+    var promises = []
+    var coords = []
+    let src_arr = [...sources.keys()];
+    if (src_arr.length == 0) {
+        return;
+    }
+    for (let i = 0; i < src_arr.length; i++) {
+        let k = src_arr[i];
+        let src = map.getSource(k)
+        promises.push(src.getData());
+    }
+
+    let res = await Promise.all(promises)
+    for (let r of res) {
+        for (let f of r.features) {
+            coords = coords.concat(getFeatureBounds(f));
+        }
+    };
+
+    let bounds = coords.reduce((bounds, coord) => {
+        return bounds.extend(coord.toArray());
+    }, coords[0]);
+    map.fitBounds(bounds, {
+        padding: 20
+    });
+}
+
 async function layerSelector (map, prefix) {
     // Enumerate ids of the layers
     const prefixRegexp = new RegExp(`^${prefix}`);
-    const toggleableLayerIds = Object.keys(map.style._layers)
-      .filter(name => name.match(prefixRegexp));
+    const toggleableLayerIds = Object.keys(map.style._layers).filter(name => name.match(prefixRegexp));
 
     toggleableLayerIds.forEach(layerId => {
         // Make the name nicer
@@ -187,8 +251,6 @@ async function layerSelector (map, prefix) {
         let elmId = "cbx_" + layerId;
 
         if (!document.getElementById(elmId)) {
-            console.log(map.style.getLayer(layerId).paint.get("line-color").value.value);
-
             let red = parseInt(map.style.getLayer(layerId).paint.get("line-color").value.value.r * 256);
             let green = parseInt(map.style.getLayer(layerId).paint.get("line-color").value.value.g * 256);
             let blue = parseInt(map.style.getLayer(layerId).paint.get("line-color").value.value.b * 256);
@@ -260,6 +322,5 @@ function randomPastelColors(){
     var g = (Math.round(((Math.random() * 256) +  color[1]) / 2)).toString(16);
     var b = (Math.round(((Math.random() * 256) +  color[2]) / 2)).toString(16);
     let res = '#' + r + g + b;
-//    console.log(res)
     return res
 }

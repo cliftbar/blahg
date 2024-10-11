@@ -9,6 +9,8 @@ draft: false
 
 ![Gov't Camp NOAA](https://forecast.weather.gov/meteograms/Plotter.php?lat=45.3&lon=-121.75&wfo=PQR&zcode=ORZ011&gset=18&gdiff=3&unit=0&tinfo=PY8&ahour=0&pcmd=11011110101000000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6)
 
+- [SNOTEL Timeseries](https://www.weather.gov/wrh/timeseries?site=MTHO3)
+
 ## Resorts
 - [Timberline Lodge Conditions and Cameras](https://www.timberlinelodge.com/conditions#webcams)
 - [Ski Bowl Conditions and Cameras](https://skibowl.com/winter-condition-and-lift-status/)

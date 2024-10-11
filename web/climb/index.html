@@ -1,0 +1,43 @@
+
+{{- $pathParts := splitList "/" .OriginalReq.URL.Path -}}
+{{- $section := (index $pathParts 1) -}}
+{{- $markdownFilename := default "/templates/index.md" (slice $pathParts 2 | join "/") -}}
+{{- $markdownFilePath := "" }}
+{{- $is_index := (contains "index.md" $markdownFilename) -}}
+{{- if not $is_index -}}
+    {{- $markdownFileStem := trimSuffix ".md" (trimSuffix ".html" $markdownFilename) -}}
+    {{- $markdownFilePath = printf "/%s/markdown/%s.md" $section $markdownFileStem -}}
+{{- else if $is_index -}}
+    {{- $markdownFilePath = $markdownFilename -}}
+{{- end }}
+
+{{- $markdownFile := (include $markdownFilePath $section | splitFrontMatter) -}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/dracula.css">
+    {{ range $key, $value :=  $markdownFile.Meta -}}
+    <meta name= "{{$key}}" content="{{$value}}">
+    {{- end }}
+    <title>{{ $markdownFile.Meta.title }}</title>
+    <script src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+
+</head>
+<body>
+{{- include "/includes/nav.html" -}}
+<div class="content">
+{{- if and ($is_index) ( fileExists (printf "/%s/markdown/%s-index.md" $section $section)) -}}
+{{- (include (printf "/%s/markdown/%s-index.md" $section $section) | markdown) -}}
+{{- end -}}
+{{- if not $is_index -}}
+<h1>{{ $markdownFile.Meta.title }}</h1>
+{{- end -}}
+{{- markdown $markdownFile.Body -}}
+</div>
+{{ include "/includes/footer.html" }}
+</body>
+</html>

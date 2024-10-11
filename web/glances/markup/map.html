@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/basic.css">
@@ -36,6 +38,7 @@
                 <fieldset class="flex-container">
                     <legend>From List</legend>
                     <select id="slct_selectTrack">
+                        <option value="" selected="selected" disabled>Select Track</option>
                         {{ range listFiles ("/data/gpx") }}
                             {{ $group := . }}
                             <optgroup label="{{ . }}">

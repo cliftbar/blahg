@@ -1,106 +1,112 @@
 ---
 title: Backcountry Ski Gear List
 createdAt: 2023-11-13
-updatedAt: 2023-12-11
+updatedAt: 2024-07-08
 draft: false
 ---
-## Bags
-- Pack: [Mammut Nirvana 30](https://www.mammut.com/us/en/products/2560-00071-0001/nirvana-30)
-- Nylon drawstring bags (ex. https://www.amazon.com/dp/B07CBLWZBS)
-    - These are primarily just to keep things organized
-- Lightweight Dry Bag
-    - keep extra layers dry and separate
-- Large ZipLoc bag
+# Gear
+## Packs
+- [Mammut Nirvana 30](https://www.mammut.com/us/en/products/2560-00071-0001/nirvana-30)
+- [Deuter Freescape Pro 40+](https://www.deuter.com/us-en/shop/backpacks/p1021337-ski-tour-backpack-freescape-pro-40)
 
 ## Skis, Boots, & Poles
-- Skis: [Atomic Access 2013](https://www.evo.com/outlet/skis/atomic-access-2013)
-    - Bought Used
-    - 181cm length
-    - 100mm width underfoot
-    - Longer and heavier than is probably ideal.  But at $150 for skis, bindings, and skins I'll make it work for a season or two
-- Bindings: [G3 Onyx ~2014](https://www.evo.com/outlet/alpine-touring-ski-bindings/g3-onyx-85mm-brakes)
-    - Bought Used
-- Skins: [G3 Alpinist Skins](https://us.genuineguidegear.com/collections/skins/products/alpinist-universal-climbing-skins/)
-    - Bought Used
-- Boots: [Salomon MTN Explore](https://blisterreview.com/gear-reviews/2015-2016-salomon-mtn-explore-boot)
-    - Bought Used
-- Poles: Adjustable trekking poles
-    - These are similar: https://www.amazon.com/gp/product/B07CC49R4C/ref=ox_sc_saved_title_1
-- Helmet
+- Skis: [2023 Pass by Season Eqpt](https://seasoneqpt.com/collections/skis/products/pass-skis)
+    - 176cm length
+    - 115mm width underfoot
+- Bindings: [Salomon Shift 13](https://www.salomon.com/en-us/shop/product/n-s-lab-shift-mnc.html#color=43339)
+- Skins: [C.A.M.P Countour Hybrid](https://www.camp.it/d/us/us/outdoor/brands/product/1411)
+- Boots: [Technica Cochise](https://www.evo.com/alpine-touring-ski-boots/tecnica-cochise-hv-120-dyn)
+- Poles: [G3 Via Poles](https://us.genuineguidegear.com/collections/poles/products/via-poles?variant=31706177405001)
 
 ## Avalanche Gear
 - Beacon: [Mammut Barryvox](https://www.mammut.com/us/en/products/2710-00150/barryvox)
 - Probe: [Black Diamond Tour 240](https://www.blackdiamondequipment.com/en_US/product/quickdraw-tour-probe-240/)
 - Shovel: [Black Diamond Lynx](https://www.blackdiamondequipment.com/en_US/product/lynx-shovel/)
-- Radio: [Rocky Talkie](https://rockytalkie.com/products/mountain-radio)
+
+## Mountaineering Gear
+- Ice Axe:
+  - [Petzl Ride](https://www.petzl.com/US/en/Sport/Ice-axes/RIDE)
+  - [Petzl Gully](https://www.petzl.com/US/en/Sport/Ice-Axes/GULLY)
+- Boot Crampons: [Petzl Irvis Hybrid](https://www.petzl.com/US/en/Sport/Crampons/IRVIS-HYBRID)
+- Ski Crampons
+- Harness: [Blue Ice Choucas Pro](https://us.blueice.com/products/choucas-pro-harness)
+- Glacier Gear
+  - Glacier Rope: [48m Beal Rando 8mm Golden Dry](https://www.beal-planet.com/en/dynamic-ropes/1446-9042-rando-8mm.html)
+  - [Petzl Micro Traxion](https://www.petzl.com/US/en/sport/pulleys/micro-traxion)
+  - [Petzl Partner Pulley](https://www.petzl.com/US/en/Sport/Pulleys/PARTNER)
+  - [S.M.C 24" Snow Picket](https://smcgear.com/24-i-picket.html)
+    - No wire
+  - Hardware
+    - 3 Locker Carabiners
+    - 4 Non-Locker Carabiners
+    - 2 120cm Slings
+    - 1 60cm Sling
+    - 2 prussik loops
+    - Crevasse Rescue Configuration
+      - Snow Picket
+        - Plus Backup: Ski, second axe, etc
+      - 3 Locker Carabiners
+      - 3 Non-Locker Carabiners
+      - 2 120cm slings
+      - 1 60cm Sling
+      - Micro Traxion
+      - Partner Pulley
+      - 2 Prussiks
+        - Pulley Attachment
+        - Self Belay
+    - Self Rescue Configuraiton
+      - Micro Traxion
+      - 2 Locker Carabiners
+      - 1 Prussik
+      - 2 120cm slings
 
 ## Emergency Supplies
-- Bivy: [SOL Escape](https://www.surviveoutdoorslonger.com/products/escape-bivvy-orange) OR [Sol 2 person Bivy](https://www.surviveoutdoorslonger.com/products/emergency-bivvy-xl-w-rescue-whistle)
-    - Decent price to performance reviews.  But after seeing them in person, I'm treating this as a one-time use item.
+- Bivy:[Sol 2 person Bivy](https://www.surviveoutdoorslonger.com/products/emergency-bivvy-xl-w-rescue-whistle)
 - First Aid Kit:
-    - [Adventure Medical Kits - Mountain Backpacker](https://adventuremedicalkits.com/products/mountain-series-medical-kit-backpacker)
+    - Double Ziploc'd kit
+        - Gauze
+        - Band-aids
+        - Hydration Powder
+        - Ibuprofen
+        - Dramamine (Nausea)
+        - paper tape
+        - Athletic Wrap
+        - Hand warmers
     - [SAM Splint](https://www.sammedical.com/products/sam-splint?variant=32444250292333)
-    - Hydration Powder
-- Stove & Fuel: [MSR Pocket Rocket](https://www.rei.com/product/114890/msr-pocketrocket-2-stove)
-- Dehydrated backup meal
 - Headlamp: [Black Diamond Storm](https://www.blackdiamondequipment.com/en_US/product/storm-400-headlamp/)
     - Chews through batteries faster than I'd like, but otherwise is a headlamp that uses AAA's
 - Spare AAA Batteries
     - Avy Beacon
     - Headlamp
-- Space Blanket
-- Hand warmers
 - Whistle
 
 ## Clothing
+- Dress to weather
 - Gloves
-- Glove liners x2
-- Fingerless gloves for warm ascents
+- Glove liners
+- Non-thermal gloves for warm days
 - Spare thermal top layer
 - Spare thermal bottom layer
-- Spare socks
 - Balaclava
-- Beanie
-- Ski Jacket (shell)
-- Ski Pants
 - Ski Goggles
 - Sunglasses
+
+## Tools/Supplies
+- Radio: [Rocky Talkie](https://rockytalkie.com/products/mountain-radio)
+- Pocket Multitool
+- Small Screwdriver with bits
+- 3 Voile straps
+- Duct Tape
+- Electrical Tape
+- PTEX Ski Repair Stick
+- Lighter x2
+- Rub on skin/ski wax
 - Sunscreen
 - Chapstick
 
-## Tools and Navigation
-- Pocket Multitool
-- Small Screwdriver with bits
-- Compass
-- Paper Topo Map of Route
-    - These are just simple printouts with the primary routes and basic markings
-    - Also good to write the day plan or notes on
-- Paper Topo Map of Mountain
-    - This is a nicer full map on waterproof paper, with details
-- Pocket Thermometer
-- Inclinometer: [BAC Slope Meter](https://backcountryaccess.com/en-us/p/slope-meter-2024)
-- 4 Voile straps
-- 2 Bungee Cords
-- Length of small string
-- Nylon Gear Strap
-- Carabiner
-- Duct Tape
-- Electrical Tape
-    - Not as strong as duct tape, but can bond to itself while wet
-- PTEX Ski Repair Stick
-- Lighter x2
-    - tape over the fresh lighter, so that they don't both get used at the same rate
-- Zip Ties
-- Rub on skin/ski wax
-
 ## Food and Water
-- Aluminum Water Canteen: https://www.amazon.com/dp/B09NRBZ83W
-    - Works with stove
-    - Metal doesn't risk punctures like a bladder
 - Hydration Bladder
-    - Larger and more convenient than canteen normally
-- One lunch-sized meal
-- Power Bars
+- Snacks enough for the day
 
 ## Phone
 - Gaia navigation app
@@ -109,18 +115,12 @@ draft: false
 - Avalanche Forecast
 - Trip plan and notes saved
 
-## Documentation
-- Camera: [Olympus TG-6](https://www.amazon.com/Olympus-Tough-TG-6-Waterproof-Camera/dp/B07RC8HPHL)
-    - I'm using the TG-6 as a helmet camera with an attachment, since I don't expect to do video often.
-- AIARE Blue Book/Small Notebook
-- Pencil
-
-# Pack for the day
-Not everything comes every day, I make adjustments at the car for how long I'll be out, weather conditions, etc. For the most part packing lighter, moving faster, and calling the day early is a better defense than needing emergency gear, so there is a balance. 
-
-# Sharing
-While all this does fit into the pack, a group can share some of this gear between people, like the first aid kit, stove, or tools bag.
+## Packing for the day
+Not everything comes every day, I make adjustments at the car for how long I'll be out, weather conditions, etc. For the most part packing lighter, moving faster, and calling the day early is a better defense than needing emergency gear, so there is a balance.
 
 # Wall of Shame
 - Monocular: [ECHO Pocket](https://www.brunton.com/products/echo-pocket-scope)
     - I dropped this in the parking lot, and _every_ internal piece came detached.  Destroyed instantly.
+
+# Update Spring 2024
+It's the end of the season! Sort of, Mt. Hood is never really done, glacier, but the main ski season is over.  So it's time to review what actually ended up in my pack and update the gear list.  Mostly stuff got tossed out by being overkill or unused, it is nicer to not carry dead weight.  And then I promptly added more mountaineering gear to start heading further up Mt. Hood and the glaciers.

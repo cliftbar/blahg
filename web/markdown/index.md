@@ -12,6 +12,8 @@ It's my site.  Very much still a work in progress.
 - [Quick Glances](/glances)
   - [Track Map](/glances/markup/map.html)
 - [Ski](/ski)
+- [Climb](/climb)
+- [Satellite](/satellite)
 
 ## Other Links and Projects
 - [Pixelizor](https://pixel.cliftbar.site/)

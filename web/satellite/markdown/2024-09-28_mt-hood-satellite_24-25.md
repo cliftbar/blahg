@@ -1,6 +1,6 @@
-{{ $pathPart := "mt-hood"}}
+{{ $pathPart := "/img/satellite/2024/mt-hood"}}
 {{ $targetName := "Mt. Hood" }}
-{{ $files := (listFiles (printf "/img/satellite/2024/%s" $pathPart) | sortAlpha | reverse) }}
+{{ $files := (listFiles $pathPart | sortAlpha | reverse) }}
 {{ $updated := index (splitList "T" (index $files 0)) 0 }}
 ---
 title: {{ $targetName }} Satellite 24/25
@@ -14,6 +14,6 @@ draft: false
         {{- $date := index (splitList "T" .) 0 -}}
 
 ## {{ printf $date }}
-[![](/img/satellite/2024/{{$pathPart}}/{{$fibase}}_thumbnail.png)](/img/satellite/2024/{{$pathPart}}/{{$fibase}}_.png "{{ $targetName }} {{ $date }}")
+[![]({{$pathPart}}/{{$fibase}}_thumbnail.png)]({{$pathPart}}/{{$fibase}}.png "{{ $targetName }} {{ $date }}")
     {{ end }}
 {{ end }}
